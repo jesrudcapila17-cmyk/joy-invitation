@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top left, #fff8f4, transparent 35%),
+    linear-gradient(135deg, #fffaf7, #fbe8e7);
+  color: #493c3c;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 30px 22px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fade .7s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+.card {
+  width: min(420px, 100%);
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(160,110,110,.18);
+  border-radius: 28px;
+  padding: 42px 25px;
+  box-shadow: 0 20px 60px rgba(100,50,50,.10);
+  backdrop-filter: blur(10px);
+}
+
+.envelope {
+  font-size: 55px;
+  margin-bottom: 12px;
+  animation: float 2s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 8px 0 14px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #756565;
+}
+
+.small {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+button {
+  border: none;
+  border-radius: 100px;
+  padding: 15px 25px;
+  margin: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.primary {
+  background: #b96d73;
+  color: white;
+  box-shadow: 0 8px 20px rgba(185,109,115,.25);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background: #f4e5e4;
+  color: #8a5c60;
+}
+
+.details {
+  margin: 25px 0;
+  padding: 20px;
+  border-top: 1px solid #ead5d4;
+  border-bottom: 1px solid #ead5d4;
+  font-family: Arial, sans-serif;
+  line-height: 2;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 22px;
+  animation: rise 4s linear forwards;
+  pointer-events: none;
+}
+
+#noBtn {
+  position: relative;
+}
+
+@keyframes fade {
+  from {opacity: 0; transform: translateY(12px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes float {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-8px);}
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="page active" id="page1">
+  <div class="card">
+    <div class="envelope">💌</div>
+    <div class="small">A little invitation</div>
+
+    <h1>Hi, Joy 🤍</h1>
+
+    <p>
+      I have a tiny question for you...
+    </p>
+
+    <button class="primary" onclick="showPage(2)">
+      Open invitation
+    </button>
+  </div>
+</section>
+
+
+<!-- BUILD UP -->
+<section class="page" id="page2">
+  <div class="card">
+    <div class="small">Okay, so...</div>
+
+    <h2>
+      There's this girl I've really been wanting to take out.
+    </h2>
+
+    <p>
+      She's pretty, sweet, and somehow makes my days
+      a little better.
+    </p>
+
+    <p>And well...</p>
+
+    <button class="primary" onclick="showPage(3)">
+      Who is she? 👀
+    </button>
+  </div>
+</section>
+
+
+<!-- REVEAL -->
+<section class="page" id="page3">
+  <div class="card">
+    <div style="font-size:45px">🤍</div>
+
+    <h1>It's you.</h1>
+
+    <p>
+      Obviously. Who else did you think? 😌
+    </p>
+
+    <button class="primary" onclick="showPage(4)">
+      Continue
+    </button>
+  </div>
+</section>
+
+
+<!-- INVITATION -->
+<section class="page" id="page4">
+  <div class="card">
+
+    <div class="small">So, Ms. Joy...</div>
+
+    <h1>
+      Will you go on a date with me?
+    </h1>
+
+    <div class="details">
+      📅 Monday, October 5, 2026<br>
+      🕔 5:00 PM<br>
+      🍽️ Dinner Date<br>
+      📍 I'll take care of the rest
+    </div>
+
+    <p>
+      All you have to do is show up
+      and let me take you out. 🤍
+    </p>
+
+    <div>
+      <button class="primary" onclick="yes()">YES! 🤍</button>
+      <button class="secondary" id="noBtn"
+        onmouseover="runAway()"
+        ontouchstart="runAway()">
+        No 😔
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ACCEPTED -->
+<section class="page" id="page5">
+  <div class="card">
+
+    <div style="font-size:55px">🥹🤍</div>
+
+    <div class="small">It's official</div>
+
+    <h1>YAYYY!</h1>
+
+    <h2>It's a date, Joy.</h2>
+
+    <div class="details">
+      October 5 • 5:00 PM
+    </div>
+
+    <p>
+      I'll take care of everything.<br><br>
+
+      Just bring yourself.<br><br>
+
+      Can't wait to spend the evening with you. 🤍
+    </p>
+
+  </div>
+</section>
+
+
+<script>
+
+function showPage(number) {
+  document.querySelectorAll(".page")
+    .forEach(page => page.classList.remove("active"));
+
+  document.getElementById("page" + number)
+    .classList.add("active");
+}
+
+function runAway() {
+  const button = document.getElementById("noBtn");
+
+  button.style.position = "fixed";
+
+  const maxX = window.innerWidth - button.offsetWidth - 20;
+  const maxY = window.innerHeight - button.offsetHeight - 20;
+
+  button.style.left =
+    Math.max(10, Math.random() * maxX) + "px";
+
+  button.style.top =
+    Math.max(10, Math.random() * maxY) + "px";
+}
+
+function yes() {
+  showPage(5);
+
+  for (let i = 0; i < 30; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+  heart.innerHTML =
+    Math.random() > .5 ? "🤍" : "🩷";
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (16 + Math.random() * 22) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
+}
+
+</script>
+
+</body>
+</html>
