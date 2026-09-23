@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Something for you 🤍</title>
+
 <style>
 * {
   box-sizing: border-box;
@@ -36,10 +38,10 @@ body {
 
 .card {
   width: min(420px, 100%);
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.88);
   border: 1px solid rgba(160,110,110,.18);
   border-radius: 28px;
-  padding: 42px 25px;
+  padding: 38px 25px;
   box-shadow: 0 20px 60px rgba(100,50,50,.10);
   backdrop-filter: blur(10px);
 }
@@ -100,12 +102,47 @@ button {
 }
 
 .details {
-  margin: 25px 0;
-  padding: 20px;
+  margin: 22px 0;
+  padding: 18px;
   border-top: 1px solid #ead5d4;
   border-bottom: 1px solid #ead5d4;
   font-family: Arial, sans-serif;
   line-height: 2;
+}
+
+/* WUV CAT */
+
+.cat-wrapper {
+  margin: 4px auto 22px;
+  position: relative;
+  width: 175px;
+}
+
+.wuv-cat {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  box-shadow: 0 12px 30px rgba(100,50,50,.15);
+  border: 5px solid white;
+  transform: rotate(-2deg);
+}
+
+.cat-caption {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #9a7474;
+  margin-top: 9px;
+  transform: rotate(-1deg);
+}
+
+.cat-heart {
+  position: absolute;
+  right: -10px;
+  top: -15px;
+  font-size: 27px;
+  animation: heartbeat 1.5s infinite;
 }
 
 .heart {
@@ -121,13 +158,24 @@ button {
 }
 
 @keyframes fade {
-  from {opacity: 0; transform: translateY(12px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-  0%,100% {transform: translateY(0);}
-  50% {transform: translateY(-8px);}
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
 }
 
 @keyframes rise {
@@ -148,18 +196,21 @@ button {
 <!-- OPENING -->
 <section class="page active" id="page1">
   <div class="card">
-    <div class="envelope">💌</div>
-    <div class="small">A little invitation</div>
 
-    <h1>Hi, Joy 🤍</h1>
+    <div class="envelope">💌</div>
+
+    <div class="small">A little something for you</div>
+
+    <h1>Hi, wuv 🤍</h1>
 
     <p>
-      I have a tiny question for you...
+      I made you something...
     </p>
 
     <button class="primary" onclick="showPage(2)">
-      Open invitation
+      Open it 🤍
     </button>
+
   </div>
 </section>
 
@@ -167,6 +218,7 @@ button {
 <!-- BUILD UP -->
 <section class="page" id="page2">
   <div class="card">
+
     <div class="small">Okay, so...</div>
 
     <h2>
@@ -183,6 +235,7 @@ button {
     <button class="primary" onclick="showPage(3)">
       Who is she? 👀
     </button>
+
   </div>
 </section>
 
@@ -190,9 +243,10 @@ button {
 <!-- REVEAL -->
 <section class="page" id="page3">
   <div class="card">
+
     <div style="font-size:45px">🤍</div>
 
-    <h1>It's you.</h1>
+    <h1>It's you, wuv.</h1>
 
     <p>
       Obviously. Who else did you think? 😌
@@ -201,38 +255,64 @@ button {
     <button class="primary" onclick="showPage(4)">
       Continue
     </button>
+
   </div>
 </section>
 
 
-<!-- INVITATION -->
+<!-- DATE INVITATION -->
 <section class="page" id="page4">
   <div class="card">
 
-    <div class="small">So, Ms. Joy...</div>
+    <!-- YOUR CAT GIF -->
+    <div class="cat-wrapper">
+
+      <div class="cat-heart">🤍</div>
+
+      <img
+        src="wuv-cat.gif"
+        class="wuv-cat"
+        alt="Kitten holding a rose"
+      >
+
+      <div class="cat-caption">
+        he brought you a flower hehe
+      </div>
+
+    </div>
+
+    <div class="small">
+      So, wuv...
+    </div>
 
     <h1>
-      Will you go on a date with me?
+      Will you go on a date with me? 🤍
     </h1>
 
     <div class="details">
       📅 Monday, October 5, 2026<br>
       🕔 5:00 PM<br>
       🍽️ Dinner Date<br>
-      📍 I'll take care of the rest
+      📍 I'll take care of the rest 😉
     </div>
 
     <p>
-      All you have to do is show up
-      and let me take you out. 🤍
+      We eat together all the time,
+      but this time I want to take you out properly. 🤍
     </p>
 
     <div>
-      <button class="primary" onclick="yes()">YES! 🤍</button>
-      <button class="secondary" id="noBtn"
+      <button class="primary" onclick="yes()">
+        Yes, wuv! 🤍
+      </button>
+
+      <button
+        class="secondary"
+        id="noBtn"
         onmouseover="runAway()"
-        ontouchstart="runAway()">
-        No 😔
+        ontouchstart="runAway()"
+      >
+        No 🥺
       </button>
     </div>
 
@@ -240,28 +320,43 @@ button {
 </section>
 
 
-<!-- ACCEPTED -->
+<!-- YES SCREEN -->
 <section class="page" id="page5">
   <div class="card">
 
     <div style="font-size:55px">🥹🤍</div>
 
-    <div class="small">It's official</div>
+    <div class="small">
+      It's official
+    </div>
 
     <h1>YAYYY!</h1>
 
-    <h2>It's a date, Joy.</h2>
+    <h2>
+      It's a date, wuv. 🤍
+    </h2>
 
     <div class="details">
       October 5 • 5:00 PM
     </div>
 
     <p>
-      I'll take care of everything.<br><br>
+      I'll take care of everything.
+      <br><br>
 
-      Just bring yourself.<br><br>
+      Just bring yourself.
+      <br><br>
 
       Can't wait to spend the evening with you. 🤍
+    </p>
+
+    <button class="secondary" onclick="showPS()">
+      P.S. 👀
+    </button>
+
+    <p id="ps" style="display:none; margin-top:20px;">
+      Yes, I really made a whole website
+      just to ask you out. 😂🤍
     </p>
 
   </div>
@@ -271,6 +366,7 @@ button {
 <script>
 
 function showPage(number) {
+
   document.querySelectorAll(".page")
     .forEach(page => page.classList.remove("active"));
 
@@ -278,13 +374,18 @@ function showPage(number) {
     .classList.add("active");
 }
 
+
 function runAway() {
+
   const button = document.getElementById("noBtn");
 
   button.style.position = "fixed";
 
-  const maxX = window.innerWidth - button.offsetWidth - 20;
-  const maxY = window.innerHeight - button.offsetHeight - 20;
+  const maxX =
+    window.innerWidth - button.offsetWidth - 20;
+
+  const maxY =
+    window.innerHeight - button.offsetHeight - 20;
 
   button.style.left =
     Math.max(10, Math.random() * maxX) + "px";
@@ -293,18 +394,23 @@ function runAway() {
     Math.max(10, Math.random() * maxY) + "px";
 }
 
+
 function yes() {
+
   showPage(5);
 
-  for (let i = 0; i < 30; i++) {
-    setTimeout(createHeart, i * 100);
+  for (let i = 0; i < 35; i++) {
+    setTimeout(createHeart, i * 90);
   }
 }
 
+
 function createHeart() {
+
   const heart = document.createElement("div");
 
   heart.className = "heart";
+
   heart.innerHTML =
     Math.random() > .5 ? "🤍" : "🩷";
 
@@ -317,6 +423,13 @@ function createHeart() {
   document.body.appendChild(heart);
 
   setTimeout(() => heart.remove(), 4000);
+}
+
+
+function showPS() {
+
+  document.getElementById("ps").style.display = "block";
+
 }
 
 </script>
