@@ -8,11 +8,16 @@
 
 <style>
 
+/* ================================
+   BASE
+================================ */
+
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   min-height: 100%;
 }
@@ -20,33 +25,65 @@ html, body {
 body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
-
-  background:
-    radial-gradient(circle at top left, #fff8f4, transparent 35%),
-    linear-gradient(135deg, #fffaf7, #fbe8e7);
-
   color: #493c3c;
-
   overflow-x: hidden;
   overflow-y: auto;
+
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,.95), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(245,205,207,.55), transparent 32%),
+    linear-gradient(135deg, #fffaf7, #fbe8e7);
+
+  background-size: 130% 130%;
+  animation: backgroundMove 12s ease-in-out infinite alternate;
 }
 
 
-/* PAGES */
+/* ================================
+   BACKGROUND DECORATIONS
+================================ */
+
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: .45;
+}
+
+.glow-one {
+  width: 220px;
+  height: 220px;
+  background: #ffdfe0;
+  top: -60px;
+  left: -70px;
+  animation: glowFloatOne 10s ease-in-out infinite;
+}
+
+.glow-two {
+  width: 260px;
+  height: 260px;
+  background: #f3cdd0;
+  bottom: -100px;
+  right: -80px;
+  animation: glowFloatTwo 12s ease-in-out infinite;
+}
+
+
+/* ================================
+   PAGES
+================================ */
 
 .page {
   display: none;
-
   min-height: 100vh;
-
   padding: 30px 22px;
 
   align-items: center;
   justify-content: center;
 
   text-align: center;
-
-  animation: fade .7s ease;
 }
 
 .page.active {
@@ -54,49 +91,97 @@ body {
 }
 
 
-/* CARD */
+/* ================================
+   CARD
+================================ */
 
 .card {
-  width: min(420px, 100%);
+  width: min(430px, 100%);
 
-  background: rgba(255,255,255,.82);
+  position: relative;
 
-  border: 1px solid rgba(160,110,110,.18);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.94),
+      rgba(255,250,249,.86)
+    );
 
-  border-radius: 28px;
+  border:
+    1px solid rgba(170,110,115,.16);
 
-  padding: 42px 25px;
+  border-radius: 30px;
 
-  box-shadow: 0 20px 60px rgba(100,50,50,.10);
+  padding: 44px 27px;
 
-  backdrop-filter: blur(10px);
+  box-shadow:
+    0 25px 70px rgba(108,60,64,.11),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+  backdrop-filter: blur(14px);
+
+  overflow: hidden;
+
+  animation:
+    cardEnter .65s cubic-bezier(.22,.8,.35,1);
 }
 
 
-/* TEXT */
+/* subtle hearts in corners */
 
-.envelope {
-  font-size: 55px;
+.card::before {
+  content: "♡";
 
-  margin-bottom: 12px;
+  position: absolute;
 
-  animation: float 2s ease-in-out infinite;
+  top: 17px;
+  left: 20px;
+
+  font-size: 20px;
+
+  color: rgba(185,109,115,.20);
 }
+
+.card::after {
+  content: "♡";
+
+  position: absolute;
+
+  bottom: 17px;
+  right: 20px;
+
+  font-size: 20px;
+
+  color: rgba(185,109,115,.20);
+
+  transform: rotate(15deg);
+}
+
+
+/* ================================
+   TYPOGRAPHY
+================================ */
 
 h1 {
-  font-size: 34px;
+  margin: 9px 0 15px;
 
-  margin: 8px 0 14px;
+  font-size: clamp(30px, 7vw, 36px);
 
   font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: -.4px;
 }
 
 h2 {
-  font-size: 28px;
+  margin: 18px 0;
+
+  font-size: clamp(25px, 6vw, 30px);
+
+  line-height: 1.35;
 
   font-weight: 500;
-
-  line-height: 1.3;
 }
 
 p {
@@ -105,25 +190,68 @@ p {
   line-height: 1.7;
 
   color: #756565;
+
+  font-size: 15px;
 }
 
 .small {
-  font-size: 13px;
+  font-size: 12px;
 
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
 
   text-transform: uppercase;
+
+  color: #766363;
+}
+
+.soft-text {
+  max-width: 345px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: #806f6f;
+}
+
+.emphasis {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+
+  line-height: 1.55;
+
+  color: #5d494a;
+
+  margin: 20px auto;
 }
 
 
-/* BUTTONS */
+/* ================================
+   OPENING ENVELOPE
+================================ */
+
+.envelope {
+  font-size: 58px;
+
+  margin-bottom: 14px;
+
+  display: inline-block;
+
+  animation:
+    envelopeFloat 2.3s ease-in-out infinite;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
 
 button {
   border: none;
 
   border-radius: 100px;
 
-  padding: 15px 25px;
+  padding: 15px 26px;
 
   margin: 8px;
 
@@ -131,68 +259,209 @@ button {
 
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+
   transition:
-    transform .3s ease,
+    transform .25s ease,
+    box-shadow .25s ease,
     font-size .3s ease,
     padding .3s ease,
-    box-shadow .3s ease;
+    opacity .25s ease;
+}
+
+button:active {
+  transform: scale(.95);
 }
 
 .primary {
-  background: #b96d73;
+  background:
+    linear-gradient(
+      135deg,
+      #bf747a,
+      #b56870
+    );
 
   color: white;
 
-  box-shadow: 0 8px 20px rgba(185,109,115,.25);
+  box-shadow:
+    0 10px 25px rgba(185,109,115,.28);
+}
+
+.primary:hover {
+  box-shadow:
+    0 13px 30px rgba(185,109,115,.35);
 }
 
 .secondary {
-  background: #f4e5e4;
+  background: #f5e5e5;
 
-  color: #8a5c60;
+  color: #895d60;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(185,109,115,.08);
 }
 
 
-/* DETAILS */
+/* ================================
+   PROGRESS DOTS
+================================ */
 
-.details {
-  margin: 25px 0;
+.progress {
+  margin-top: 28px;
 
-  padding: 20px;
+  display: flex;
 
-  border-top: 1px solid #ead5d4;
-  border-bottom: 1px solid #ead5d4;
+  justify-content: center;
 
-  font-family: Arial, sans-serif;
-
-  line-height: 2;
+  gap: 7px;
 }
 
+.dot {
+  width: 6px;
+  height: 6px;
 
-/* CAT */
+  border-radius: 50%;
 
-.wuv-cat {
-  width: 145px;
-  height: 145px;
+  background: #e4cece;
 
-  object-fit: cover;
+  transition:
+    width .3s ease,
+    background .3s ease;
+}
+
+.dot.active {
+  width: 17px;
 
   border-radius: 20px;
 
-  margin: 0 auto 20px;
-
-  display: block;
-
-  border: 4px solid white;
-
-  box-shadow: 0 10px 25px rgba(100,50,50,.13);
+  background: #bd777c;
 }
 
 
-/* ANSWER BUTTONS */
+/* ================================
+   REVEAL HEART
+================================ */
+
+.reveal-heart {
+  font-size: 51px;
+
+  display: inline-block;
+
+  margin-bottom: 3px;
+
+  animation:
+    heartReveal .8s cubic-bezier(.2,.8,.3,1),
+    heartbeat 2.4s 1s ease-in-out infinite;
+}
+
+
+/* ================================
+   CAT
+================================ */
+
+.cat-wrap {
+  display: inline-block;
+
+  margin-bottom: 17px;
+
+  animation:
+    catFloat 3s ease-in-out infinite;
+}
+
+.wuv-cat {
+  width: 150px;
+  height: 150px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+
+  border: 5px solid rgba(255,255,255,.95);
+
+  box-shadow:
+    0 13px 30px rgba(100,50,50,.14);
+}
+
+
+/* ================================
+   DATE INFORMATION
+================================ */
+
+.date-box {
+  margin: 25px 0;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff9f8,
+      #fceded
+    );
+
+  border:
+    1px solid rgba(185,109,115,.13);
+
+  box-shadow:
+    inset 0 1px 0 white;
+
+  font-family: Arial, sans-serif;
+}
+
+.date-row {
+  display: flex;
+
+  align-items: center;
+
+  text-align: left;
+
+  padding: 8px 7px;
+
+  border-bottom:
+    1px solid rgba(185,109,115,.10);
+}
+
+.date-row:last-child {
+  border-bottom: none;
+}
+
+.date-icon {
+  width: 35px;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+.date-label {
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.3px;
+
+  color: #aa8587;
+
+  margin-bottom: 2px;
+}
+
+.date-value {
+  font-size: 14px;
+
+  color: #614f50;
+}
+
+
+/* ================================
+   YES / NO
+================================ */
 
 .answer-area {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .answer-buttons {
@@ -201,108 +470,171 @@ button {
   justify-content: center;
   align-items: center;
 
-  gap: 4px;
-
   flex-wrap: wrap;
 
-  min-height: 85px;
+  gap: 3px;
+
+  min-height: 92px;
 }
 
-#yesBtn {
-  transform-origin: center;
-}
-
+#yesBtn,
 #noBtn {
   transform-origin: center;
 }
 
 .no-hint {
+  margin-top: -5px;
+
   font-family: Arial, sans-serif;
 
-  font-size: 12px;
+  font-size: 11px;
 
   font-style: italic;
 
-  color: #a58c8c;
+  color: #ad9091;
 
   opacity: .85;
 
-  margin-top: -3px;
-
-  transition: opacity .3s ease;
+  transition:
+    opacity .3s ease;
 }
 
 
-/* DATE TICKET */
+/* ================================
+   DATE TICKET
+================================ */
 
 .ticket {
-  margin: 25px auto 10px;
+  width: min(320px, 100%);
 
-  max-width: 310px;
-
-  padding: 22px 18px;
-
-  border: 2px dashed #d9a5a8;
-
-  border-radius: 18px;
-
-  background: #fff8f7;
-
-  font-family: Arial, sans-serif;
+  margin: 25px auto 20px;
 
   position: relative;
 
-  box-shadow: 0 10px 30px rgba(100,50,50,.08);
+  padding: 24px 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff9f7,
+      #fceaea
+    );
+
+  border:
+    2px dashed #d8a1a5;
+
+  border-radius: 19px;
+
+  box-shadow:
+    0 15px 35px rgba(100,50,50,.10);
+
+  font-family: Arial, sans-serif;
 }
 
-.ticket-title {
+
+/* ticket cutouts */
+
+.ticket::before,
+.ticket::after {
+  content: "";
+
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: #f9e8e7;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.ticket::before {
+  left: -14px;
+}
+
+.ticket::after {
+  right: -14px;
+}
+
+.ticket-top {
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 20px;
+  font-size: 18px;
 
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
 
-  color: #9e6267;
+  color: #a46569;
 
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .ticket-names {
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 25px;
+  font-size: 27px;
 
-  margin-bottom: 12px;
+  color: #513f40;
 
-  color: #493c3c;
+  margin-bottom: 17px;
 }
 
-.ticket-info {
+.ticket-divider {
+  border-top:
+    1px dashed rgba(185,109,115,.35);
+
+  margin: 15px 0;
+}
+
+.ticket-details {
   font-size: 13px;
 
-  line-height: 1.8;
+  line-height: 2;
 
-  color: #756565;
+  color: #776465;
 }
 
 .ticket-admit {
-  margin-top: 14px;
+  margin-top: 16px;
 
-  padding-top: 12px;
+  padding-top: 14px;
 
-  border-top: 1px solid #ead5d4;
+  border-top:
+    1px solid rgba(185,109,115,.17);
 
-  font-size: 12px;
-
-  letter-spacing: 1.5px;
-
-  color: #a4696d;
+  font-size: 11px;
 
   font-weight: bold;
+
+  letter-spacing: 1.8px;
+
+  color: #a1666b;
 }
 
 
-/* HEARTS */
+/* ================================
+   SCREENSHOT MESSAGE
+================================ */
+
+.screenshot-note {
+  margin-top: 18px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  color: #a08082;
+
+  font-style: italic;
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
 
 .heart {
   position: fixed;
@@ -313,23 +645,27 @@ button {
 
   z-index: 9999;
 
-  animation: rise 4s linear forwards;
+  animation:
+    heartRise 4.5s linear forwards;
 }
 
 
-/* SMALL PHONES */
+/* ================================
+   MOBILE
+================================ */
 
-@media (max-height: 700px) {
+@media (max-height: 720px) {
 
   .page {
     align-items: flex-start;
 
-    padding-top: 25px;
-    padding-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 45px;
   }
 
   .card {
-    padding: 30px 22px;
+    padding:
+      32px 22px;
   }
 
   .wuv-cat {
@@ -337,64 +673,183 @@ button {
     height: 125px;
   }
 
-  h1 {
-    font-size: 29px;
-  }
-
 }
 
 @media (max-width: 380px) {
 
   .card {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 19px;
+    padding-right: 19px;
   }
 
   button {
     margin: 6px;
   }
 
+  .date-box {
+    padding: 14px;
+  }
+
 }
 
 
-/* ANIMATIONS */
+/* ================================
+   ANIMATIONS
+================================ */
 
-@keyframes fade {
+@keyframes backgroundMove {
+
+  from {
+    background-position:
+      0% 0%;
+  }
+
+  to {
+    background-position:
+      100% 100%;
+  }
+
+}
+
+
+@keyframes cardEnter {
 
   from {
     opacity: 0;
-    transform: translateY(12px);
+
+    transform:
+      translateY(18px)
+      scale(.97);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0)
+      scale(1);
   }
 
 }
 
-@keyframes float {
+
+@keyframes envelopeFloat {
 
   0%,100% {
-    transform: translateY(0);
+    transform:
+      translateY(0)
+      rotate(-2deg);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform:
+      translateY(-8px)
+      rotate(2deg);
   }
 
 }
 
-@keyframes rise {
+
+@keyframes heartReveal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(.35);
+  }
+
+  70% {
+    transform:
+      scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+@keyframes heartbeat {
+
+  0%,100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.08);
+  }
+
+}
+
+
+@keyframes catFloat {
+
+  0%,100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-6px);
+  }
+
+}
+
+
+@keyframes heartRise {
 
   from {
-    transform: translateY(0) rotate(0deg);
+    transform:
+      translateY(0)
+      rotate(0deg);
+
     opacity: 1;
   }
 
   to {
-    transform: translateY(-110vh) rotate(25deg);
+    transform:
+      translateY(-115vh)
+      rotate(25deg);
+
     opacity: 0;
+  }
+
+}
+
+
+@keyframes glowFloatOne {
+
+  0%,100% {
+    transform:
+      translate(0,0);
+  }
+
+  50% {
+    transform:
+      translate(50px,35px);
+  }
+
+}
+
+
+@keyframes glowFloatTwo {
+
+  0%,100% {
+    transform:
+      translate(0,0);
+  }
+
+  50% {
+    transform:
+      translate(-40px,-35px);
   }
 
 }
@@ -406,7 +861,16 @@ button {
 <body>
 
 
-<!-- PAGE 1 -->
+<!-- BACKGROUND GLOWS -->
+
+<div class="bg-glow glow-one"></div>
+<div class="bg-glow glow-two"></div>
+
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
 
 <section class="page active" id="page1">
 
@@ -425,7 +889,8 @@ button {
     </h1>
 
     <p>
-      I have a tiny question for you...
+      I have a tiny question
+      for you...
     </p>
 
     <button
@@ -435,13 +900,25 @@ button {
       Open invitation
     </button>
 
+
+    <div class="progress">
+
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+
+    </div>
+
   </div>
 
 </section>
 
 
 
-<!-- PAGE 2 -->
+<!-- =========================
+     PAGE 2
+========================= -->
 
 <section class="page" id="page2">
 
@@ -451,25 +928,32 @@ button {
       Okay, so...
     </div>
 
+
     <h2>
-      There's this girl who somehow made my ordinary days feel a little less ordinary.
+      There's this girl who somehow
+      made my ordinary days feel
+      a little less ordinary.
     </h2>
 
-    <p>
+
+    <p class="soft-text">
       Between the random conversations,
       eating together, little moments,
       and everything in between...
     </p>
 
-    <p>
-      I realized I really, really
-      enjoy having her around.
-    </p>
+
+    <div class="emphasis">
+      I realized I really,
+      really enjoy having her around. 🤍
+    </div>
+
 
     <p>
-      And I think you know where
+      I think you know where
       this is going... 😌
     </p>
+
 
     <button
       class="primary"
@@ -478,34 +962,54 @@ button {
       I have an idea 👀
     </button>
 
+
+    <div class="progress">
+
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+
+    </div>
+
   </div>
 
 </section>
 
 
 
-<!-- PAGE 3 -->
+<!-- =========================
+     PAGE 3
+========================= -->
 
 <section class="page" id="page3">
 
   <div class="card">
 
-    <div style="font-size:45px;">
+
+    <div class="reveal-heart">
       🤍
     </div>
+
 
     <h1>
       Of course it's you, wuv.
     </h1>
 
-    <p>
+
+    <p class="soft-text">
+
       You've made me happier
       than you probably realize.
+
       <br><br>
-      So I wanted to make our
-      next little memory a bit
-      more special. 🤍
+
+      So I wanted to make
+      our next little memory
+      a bit more special. 🤍
+
     </p>
+
 
     <button
       class="primary"
@@ -514,59 +1018,164 @@ button {
       Okayyy, what is it? 👀
     </button>
 
+
+    <div class="progress">
+
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+
+    </div>
+
   </div>
 
 </section>
 
 
 
-<!-- PAGE 4 -->
+<!-- =========================
+     PAGE 4
+========================= -->
 
 <section class="page" id="page4">
 
   <div class="card">
 
-    <img
-      src="./wuv-cat.gif.gif"
-      class="wuv-cat"
-      alt="Kitten holding a rose"
-    >
+
+    <div class="cat-wrap">
+
+      <img
+        src="./wuv-cat.gif.gif"
+        class="wuv-cat"
+        alt="Kitten holding a rose"
+      >
+
+    </div>
+
 
     <div class="small">
       So, wuv...
     </div>
 
+
     <h1>
-      Will you go on a date with me?
+      Will you go on a date
+      with me?
     </h1>
 
-    <div class="details">
 
-      📅 Monday, October 5, 2026
 
-      <br>
+    <!-- DATE DETAILS -->
 
-      🕔 5:00 PM
+    <div class="date-box">
 
-      <br>
 
-      🍽️ Dinner Date
+      <div class="date-row">
 
-      <br>
+        <div class="date-icon">
+          📅
+        </div>
 
-      📍 I'll take care of the rest
+        <div>
+
+          <div class="date-label">
+            Date
+          </div>
+
+          <div class="date-value">
+            Monday, October 5, 2026
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="date-row">
+
+        <div class="date-icon">
+          🕔
+        </div>
+
+        <div>
+
+          <div class="date-label">
+            Time
+          </div>
+
+          <div class="date-value">
+            5:00 PM
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="date-row">
+
+        <div class="date-icon">
+          🍽️
+        </div>
+
+        <div>
+
+          <div class="date-label">
+            Plan
+          </div>
+
+          <div class="date-value">
+            Dinner Date
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="date-row">
+
+        <div class="date-icon">
+          📍
+        </div>
+
+        <div>
+
+          <div class="date-label">
+            Where
+          </div>
+
+          <div class="date-value">
+            I'll take care of the rest
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
-    <p>
+
+
+    <p class="soft-text">
       All you have to do is show up
       and let me take you out. 🤍
     </p>
 
 
+
+    <!-- ANSWERS -->
+
     <div class="answer-area">
 
+
       <div class="answer-buttons">
+
 
         <button
           class="primary"
@@ -585,6 +1194,7 @@ button {
           No 😔
         </button>
 
+
       </div>
 
 
@@ -595,7 +1205,19 @@ button {
         ↑ try clicking no 👀
       </div>
 
+
     </div>
+
+
+    <div class="progress">
+
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot active"></div>
+
+    </div>
+
 
   </div>
 
@@ -603,44 +1225,61 @@ button {
 
 
 
-<!-- PAGE 5: YES -->
+<!-- =========================
+     PAGE 5 — YES
+========================= -->
 
 <section class="page" id="page5">
 
   <div class="card">
 
-    <div style="font-size:55px;">
+
+    <div
+      class="reveal-heart"
+      style="font-size:58px;"
+    >
       🥹🤍
     </div>
+
 
     <div class="small">
       Date confirmed
     </div>
 
+
     <h1>
       YAYYY!
     </h1>
+
 
     <h2>
       It's a date, wuv.
     </h2>
 
 
-    <!-- DATE TICKET -->
+
+    <!-- TICKET -->
 
     <div class="ticket">
 
-      <div class="ticket-title">
+
+      <div class="ticket-top">
         ♡ DATE TICKET ♡
       </div>
+
 
       <div class="ticket-names">
         JOY + JES
       </div>
 
-      <div class="ticket-info">
 
-        📅 OCTOBER 5, 2026
+      <div class="ticket-divider">
+      </div>
+
+
+      <div class="ticket-details">
+
+        📅 MONDAY • OCTOBER 5, 2026
 
         <br>
 
@@ -652,31 +1291,37 @@ button {
 
       </div>
 
+
       <div class="ticket-admit">
         ADMIT ONE WUV 🤍
       </div>
 
+
     </div>
 
 
-    <p>
+
+    <p class="soft-text">
+
       I'll take care of everything.
+
       <br><br>
 
       Just bring yourself. 🤍
 
       <br><br>
 
-      Can't wait to make another
-      memory with you.
-      <br><br>
+      Can't wait to make
+      another memory with you.
 
-      <strong>
-        P.S. Screenshot this.
-        This is your official
-        date ticket 🎟️🤍
-      </strong>
     </p>
+
+
+    <div class="screenshot-note">
+      Screenshot this —
+      your official date ticket 🎟️🤍
+    </div>
+
 
   </div>
 
@@ -684,26 +1329,35 @@ button {
 
 
 
-<!-- PAGE 6: REAL NO -->
+<!-- =========================
+     PAGE 6 — REAL NO
+========================= -->
 
 <section class="page" id="page6">
 
   <div class="card">
 
+
     <div style="font-size:55px;">
       🥺
     </div>
+
 
     <h1>
       Okay okay, wuv 😭
     </h1>
 
-    <p>
+
+    <p class="soft-text">
+
       Had to try HAHAHA.
+
       <br><br>
 
       No pressure. 🤍
+
     </p>
+
 
   </div>
 
@@ -713,8 +1367,9 @@ button {
 
 <script>
 
-
-/* PAGE NAVIGATION */
+/* ================================
+   PAGE NAVIGATION
+================================ */
 
 function showPage(number) {
 
@@ -727,11 +1382,32 @@ function showPage(number) {
     });
 
 
-  document
-    .getElementById(
+  const newPage =
+    document.getElementById(
       "page" + number
-    )
-    .classList.add("active");
+    );
+
+
+  newPage.classList.add("active");
+
+
+  /*
+    Restart the entrance animation
+    every time a new card appears.
+  */
+
+  const card =
+    newPage.querySelector(".card");
+
+
+  card.style.animation = "none";
+
+
+  void card.offsetWidth;
+
+
+  card.style.animation =
+    "cardEnter .65s cubic-bezier(.22,.8,.35,1)";
 
 
   window.scrollTo({
@@ -743,9 +1419,9 @@ function showPage(number) {
 
 
 
-/* --------------------------
+/* ================================
    PLAYFUL NO
--------------------------- */
+================================ */
 
 let noAttempts = 0;
 
@@ -799,20 +1475,26 @@ function handleNo() {
 
 
   const noButton =
-    document.getElementById("noBtn");
+    document.getElementById(
+      "noBtn"
+    );
 
 
   const yesButton =
-    document.getElementById("yesBtn");
+    document.getElementById(
+      "yesBtn"
+    );
 
 
   const hint =
-    document.getElementById("noHint");
+    document.getElementById(
+      "noHint"
+    );
 
 
   /*
-    After all the joke attempts,
-    let her genuinely choose No.
+    After the joke,
+    No becomes a genuine choice.
   */
 
   if (noAttempts >= 5) {
@@ -827,7 +1509,8 @@ function handleNo() {
   noAttempts++;
 
 
-  /* Hide the hint */
+
+  /* HIDE HINT */
 
   if (hint) {
 
@@ -836,51 +1519,54 @@ function handleNo() {
   }
 
 
-  /* Change No text */
+
+  /* CHANGE NO TEXT */
 
   noButton.textContent =
+
     noMessages[
       noAttempts - 1
     ];
 
 
-  /*
-    SHRINK NO
-    It stays exactly where it is.
-  */
+
+  /* SHRINK NO */
 
   noButton.style.fontSize =
+
     noSizes[
       noAttempts - 1
     ];
 
 
   noButton.style.padding =
+
     noPaddings[
       noAttempts - 1
     ];
 
 
-  /*
-    GROW YES 😂
-  */
+
+  /* GROW YES */
 
   const yesScale =
-    1 + (noAttempts * 0.10);
+    1 + (noAttempts * .10);
 
 
   yesButton.style.transform =
     `scale(${yesScale})`;
 
 
+
   /*
-    After the fifth joke,
-    make it clear No is now real.
+    AFTER FINAL JOKE:
+    GIVE HER THE REAL NO
   */
 
   if (noAttempts === 5) {
 
     setTimeout(() => {
+
 
       noButton.textContent =
         "Okay, actually no 🥺";
@@ -893,6 +1579,7 @@ function handleNo() {
       noButton.style.padding =
         "7px 11px";
 
+
     }, 700);
 
   }
@@ -901,40 +1588,76 @@ function handleNo() {
 
 
 
-/* --------------------------
+/* ================================
    YES
--------------------------- */
+================================ */
 
 function yes() {
 
 
-  showPage(5);
-
-
-  for (
-    let i = 0;
-    i < 45;
-    i++
-  ) {
-
-    setTimeout(
-      createHeart,
-      i * 75
+  const yesButton =
+    document.getElementById(
+      "yesBtn"
     );
 
-  }
+
+  /*
+    Cute tiny confirmation
+    before revealing ticket.
+  */
+
+  yesButton.textContent =
+    "I knew it 😌🤍";
+
+
+  yesButton.style.transform =
+    "scale(1.08)";
+
+
+  /*
+    Small delay makes the click
+    feel intentional.
+  */
+
+  setTimeout(() => {
+
+
+    showPage(5);
+
+
+    for (
+      let i = 0;
+      i < 45;
+      i++
+    ) {
+
+
+      setTimeout(
+        createHeart,
+        i * 75
+      );
+
+
+    }
+
+
+  }, 550);
 
 }
 
 
 
-/* HEARTS */
+/* ================================
+   FLOATING HEARTS
+================================ */
 
 function createHeart() {
 
 
   const heart =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
 
   heart.className =
@@ -943,13 +1666,17 @@ function createHeart() {
 
   const hearts = [
 
+    "♡",
+
     "🤍",
+
+    "♡",
 
     "🩷",
 
-    "💕",
+    "♡",
 
-    "🤍"
+    "💕"
 
   ];
 
@@ -974,25 +1701,37 @@ function createHeart() {
   heart.style.fontSize =
 
     (
-      16
+      17
       + Math.random()
-      * 24
+      * 22
     )
 
     + "px";
 
 
+  heart.style.animationDuration =
+
+    (
+      3.5
+      + Math.random()
+      * 1.5
+    )
+
+    + "s";
+
+
   document.body
-    .appendChild(heart);
+    .appendChild(
+      heart
+    );
 
 
   setTimeout(
     () => heart.remove(),
-    4000
+    5200
   );
 
 }
-
 
 </script>
 
