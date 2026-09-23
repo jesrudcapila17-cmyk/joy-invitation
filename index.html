@@ -31,16 +31,12 @@ body {
   overflow-y: auto;
 
   background:
-    radial-gradient(
-      circle at 15% 15%,
+    radial-gradient(circle at 15% 15%,
       rgba(255,255,255,.95),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 80%,
+      transparent 30%),
+    radial-gradient(circle at 85% 80%,
       rgba(245,205,207,.55),
-      transparent 32%
-    ),
+      transparent 32%),
     linear-gradient(
       135deg,
       #fffaf7,
@@ -48,11 +44,7 @@ body {
     );
 
   background-size: 130% 130%;
-
-  animation:
-    backgroundMove
-    12s ease-in-out
-    infinite alternate;
+  animation: backgroundMove 12s ease-in-out infinite alternate;
 }
 
 
@@ -62,44 +54,29 @@ body {
 
 .bg-glow {
   position: fixed;
-
   border-radius: 50%;
-
   filter: blur(55px);
-
   pointer-events: none;
-
   z-index: -1;
-
   opacity: .45;
 }
 
 .glow-one {
   width: 220px;
   height: 220px;
-
   background: #ffdfe0;
-
   top: -60px;
   left: -70px;
-
-  animation:
-    glowFloatOne
-    10s ease-in-out infinite;
+  animation: glowFloatOne 10s ease-in-out infinite;
 }
 
 .glow-two {
   width: 260px;
   height: 260px;
-
   background: #f3cdd0;
-
   bottom: -100px;
   right: -80px;
-
-  animation:
-    glowFloatTwo
-    12s ease-in-out infinite;
+  animation: glowFloatTwo 12s ease-in-out infinite;
 }
 
 
@@ -109,14 +86,10 @@ body {
 
 .page {
   display: none;
-
   min-height: 100vh;
-
   padding: 30px 22px;
-
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
@@ -126,12 +99,11 @@ body {
 
 
 /* =========================
-   CARD
+   MAIN CARD
 ========================= */
 
 .card {
   width: min(430px, 100%);
-
   position: relative;
 
   background:
@@ -141,9 +113,7 @@ body {
       rgba(255,250,249,.88)
     );
 
-  border:
-    1px solid rgba(170,110,115,.16);
-
+  border: 1px solid rgba(170,110,115,.16);
   border-radius: 30px;
 
   padding: 44px 27px;
@@ -153,43 +123,28 @@ body {
     inset 0 1px 0 rgba(255,255,255,.9);
 
   backdrop-filter: blur(14px);
-
   overflow: hidden;
 
-  animation:
-    cardEnter
-    .65s cubic-bezier(.22,.8,.35,1);
+  animation: cardEnter .65s cubic-bezier(.22,.8,.35,1);
 }
 
 .card::before {
   content: "♡";
-
   position: absolute;
-
   top: 17px;
   left: 20px;
-
   font-size: 20px;
-
-  color:
-    rgba(185,109,115,.20);
+  color: rgba(185,109,115,.20);
 }
 
 .card::after {
   content: "♡";
-
   position: absolute;
-
   bottom: 17px;
   right: 20px;
-
   font-size: 20px;
-
-  color:
-    rgba(185,109,115,.20);
-
-  transform:
-    rotate(15deg);
+  color: rgba(185,109,115,.20);
+  transform: rotate(15deg);
 }
 
 
@@ -199,71 +154,45 @@ body {
 
 h1 {
   margin: 9px 0 15px;
-
-  font-size:
-    clamp(30px, 7vw, 36px);
-
+  font-size: clamp(30px, 7vw, 36px);
   font-weight: 500;
-
   line-height: 1.2;
-
   letter-spacing: -.4px;
 }
 
 h2 {
   margin: 18px 0;
-
-  font-size:
-    clamp(24px, 6vw, 30px);
-
+  font-size: clamp(24px, 6vw, 30px);
   line-height: 1.35;
-
   font-weight: 500;
 }
 
 p {
-  font-family:
-    Arial,
-    sans-serif;
-
+  font-family: Arial, sans-serif;
   line-height: 1.7;
-
   color: #756565;
-
   font-size: 15px;
 }
 
 .small {
   font-size: 11px;
-
   letter-spacing: 2.5px;
-
   text-transform: uppercase;
-
   color: #9a797b;
 }
 
 .soft-text {
   max-width: 345px;
-
   margin-left: auto;
   margin-right: auto;
-
   color: #806f6f;
 }
 
 .emphasis {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 21px;
-
   line-height: 1.5;
-
   color: #5d494a;
-
   margin: 22px auto;
 }
 
@@ -274,21 +203,14 @@ p {
 
 .envelope {
   font-size: 60px;
-
   margin-bottom: 14px;
-
   display: inline-block;
-
-  animation:
-    envelopeFloat
-    2.3s ease-in-out infinite;
+  animation: envelopeFloat 2.3s ease-in-out infinite;
 }
 
 .address-label {
   width: min(320px, 100%);
-
   margin: 21px auto 25px;
-
   padding: 18px;
 
   border-radius: 18px;
@@ -300,46 +222,29 @@ p {
       #fcecec
     );
 
-  border:
-    1px dashed rgba(185,109,115,.38);
-
-  box-shadow:
-    inset 0 1px 0 white;
+  border: 1px dashed rgba(185,109,115,.38);
+  box-shadow: inset 0 1px 0 white;
 }
 
 .address-to {
-  font-family:
-    Arial,
-    sans-serif;
-
+  font-family: Arial, sans-serif;
   font-size: 9px;
-
   font-weight: bold;
-
   letter-spacing: 2px;
-
   color: #b17d80;
-
   margin-bottom: 7px;
 }
 
 .address-name {
   font-size: 20px;
-
   line-height: 1.35;
-
   color: #604b4c;
 }
 
 .address-from {
   margin-top: 10px;
-
-  font-family:
-    Arial,
-    sans-serif;
-
+  font-family: Arial, sans-serif;
   font-size: 11px;
-
   color: #a18485;
 }
 
@@ -350,19 +255,15 @@ p {
 
 button {
   border: none;
-
   border-radius: 100px;
 
   padding: 15px 26px;
-
   margin: 8px;
 
   font-size: 15px;
-
   cursor: pointer;
 
-  -webkit-tap-highlight-color:
-    transparent;
+  -webkit-tap-highlight-color: transparent;
 
   transition:
     transform .25s ease,
@@ -387,24 +288,20 @@ button:active {
   color: white;
 
   box-shadow:
-    0 10px 25px
-    rgba(185,109,115,.28);
+    0 10px 25px rgba(185,109,115,.28);
 }
 
 .primary:hover {
   box-shadow:
-    0 13px 30px
-    rgba(185,109,115,.35);
+    0 13px 30px rgba(185,109,115,.35);
 }
 
 .secondary {
   background: #f5e5e5;
-
   color: #895d60;
 
   box-shadow:
-    inset 0 0 0 1px
-    rgba(185,109,115,.08);
+    inset 0 0 0 1px rgba(185,109,115,.08);
 }
 
 
@@ -414,20 +311,15 @@ button:active {
 
 .progress {
   margin-top: 28px;
-
   display: flex;
-
   justify-content: center;
-
   gap: 7px;
 }
 
 .dot {
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
-
   background: #e4cece;
 
   transition:
@@ -437,9 +329,7 @@ button:active {
 
 .dot.active {
   width: 17px;
-
   border-radius: 20px;
-
   background: #bd777c;
 }
 
@@ -450,16 +340,12 @@ button:active {
 
 .reveal-heart {
   font-size: 51px;
-
   display: inline-block;
-
   margin-bottom: 3px;
 
   animation:
-    heartReveal
-    .8s cubic-bezier(.2,.8,.3,1),
-    heartbeat
-    2.4s 1s ease-in-out infinite;
+    heartReveal .8s cubic-bezier(.2,.8,.3,1),
+    heartbeat 2.4s 1s ease-in-out infinite;
 }
 
 
@@ -469,12 +355,8 @@ button:active {
 
 .cat-wrap {
   display: inline-block;
-
   margin-bottom: 17px;
-
-  animation:
-    catFloat
-    3s ease-in-out infinite;
+  animation: catFloat 3s ease-in-out infinite;
 }
 
 .wuv-cat {
@@ -482,17 +364,14 @@ button:active {
   height: 150px;
 
   display: block;
-
   object-fit: cover;
 
   border-radius: 25px;
 
-  border:
-    5px solid rgba(255,255,255,.95);
+  border: 5px solid rgba(255,255,255,.95);
 
   box-shadow:
-    0 13px 30px
-    rgba(100,50,50,.14);
+    0 13px 30px rgba(100,50,50,.14);
 }
 
 
@@ -502,7 +381,6 @@ button:active {
 
 .date-box {
   margin: 25px 0;
-
   padding: 18px;
 
   border-radius: 20px;
@@ -514,22 +392,17 @@ button:active {
       #fceded
     );
 
-  border:
-    1px solid rgba(185,109,115,.13);
+  border: 1px solid rgba(185,109,115,.13);
 
   box-shadow:
     inset 0 1px 0 white;
 
-  font-family:
-    Arial,
-    sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .date-row {
   display: flex;
-
   align-items: center;
-
   text-align: left;
 
   padding: 8px 7px;
@@ -544,50 +417,45 @@ button:active {
 
 .date-icon {
   width: 35px;
-
   font-size: 18px;
-
   flex-shrink: 0;
 }
 
 .date-label {
   font-size: 11px;
-
   text-transform: uppercase;
-
   letter-spacing: 1.3px;
-
   color: #aa8587;
-
   margin-bottom: 2px;
 }
 
 .date-value {
   font-size: 14px;
-
   color: #614f50;
 }
 
 
 /* =========================
-   YES / NO
+   YES / ANCHORED NO
 ========================= */
 
 .answer-area {
   margin-top: 10px;
 }
 
+/*
+  This row never changes position.
+  The No button is anchored here.
+*/
 .answer-buttons {
   display: flex;
-
   justify-content: center;
   align-items: center;
-
   flex-wrap: wrap;
 
-  gap: 2px;
+  gap: 4px;
 
-  min-height: 92px;
+  min-height: 105px;
 }
 
 #yesBtn,
@@ -597,29 +465,28 @@ button:active {
 
 .no-wrapper {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
+
+  /*
+    No absolute positioning.
+    No random coordinates.
+    The button stays anchored.
+  */
+  position: static;
 }
 
 .no-hint {
-  font-family:
-    Arial,
-    sans-serif;
-
+  font-family: Arial, sans-serif;
   font-size: 11px;
-
   font-style: italic;
 
   color: #ad9091;
 
   opacity: .85;
-
   white-space: nowrap;
 
-  transition:
-    opacity .3s ease;
+  transition: opacity .3s ease;
 }
 
 
@@ -629,14 +496,11 @@ button:active {
 
 .ticket {
   width: min(340px, 100%);
-
-  margin:
-    27px auto 17px;
+  margin: 27px auto 17px;
 
   position: relative;
 
-  padding:
-    27px 23px 19px;
+  padding: 27px 23px 19px;
 
   background:
     linear-gradient(
@@ -646,27 +510,21 @@ button:active {
       #fbe9e8 100%
     );
 
-  border:
-    1.5px solid
-    rgba(190,119,125,.42);
+  border: 1.5px solid rgba(190,119,125,.42);
 
   border-radius: 22px;
 
   box-shadow:
-    0 18px 45px
-    rgba(112,62,66,.12),
-    inset 0 1px 0
-    rgba(255,255,255,.95);
+    0 18px 45px rgba(112,62,66,.12),
+    inset 0 1px 0 rgba(255,255,255,.95);
 
-  font-family:
-    Arial,
-    sans-serif;
+  font-family: Arial, sans-serif;
 
   overflow: hidden;
 }
 
 
-/* ticket side notches */
+/* Ticket side notches */
 
 .ticket::before,
 .ticket::after {
@@ -695,7 +553,7 @@ button:active {
 }
 
 
-/* watermark */
+/* Watermark */
 
 .ticket-watermark {
   position: absolute;
@@ -723,11 +581,10 @@ button:active {
 }
 
 
-/* ticket header */
+/* Ticket header */
 
 .ticket-top {
   position: relative;
-
   z-index: 2;
 
   font-family:
@@ -746,7 +603,6 @@ button:active {
 
 .ticket-names {
   position: relative;
-
   z-index: 2;
 
   font-family:
@@ -765,16 +621,12 @@ button:active {
 
 .ticket-names span {
   color: #bd777c;
-
   font-size: 22px;
-
-  margin:
-    0 4px;
+  margin: 0 4px;
 }
 
 .ticket-subtitle {
   position: relative;
-
   z-index: 2;
 
   font-size: 9px;
@@ -785,27 +637,23 @@ button:active {
 }
 
 
-/* divider */
+/* Divider */
 
 .ticket-divider {
   position: relative;
-
   z-index: 2;
 
-  margin:
-    18px 0;
+  margin: 18px 0;
 
   border-top:
-    1px dashed
-    rgba(185,109,115,.35);
+    1px dashed rgba(185,109,115,.35);
 }
 
 
-/* date/time */
+/* Date + time */
 
 .ticket-grid {
   position: relative;
-
   z-index: 2;
 
   display: grid;
@@ -817,25 +665,19 @@ button:active {
 }
 
 .ticket-info {
-  padding:
-    5px 10px;
+  padding: 5px 10px;
 }
 
 .ticket-info:first-child {
   border-right:
-    1px solid
-    rgba(185,109,115,.18);
+    1px solid rgba(185,109,115,.18);
 }
 
 .ticket-label {
   font-size: 9px;
-
   letter-spacing: 2px;
-
   font-weight: bold;
-
   color: #b07b7e;
-
   margin-bottom: 6px;
 }
 
@@ -852,18 +694,15 @@ button:active {
 
 .ticket-small {
   margin-top: 3px;
-
   font-size: 10px;
-
   color: #967d7e;
 }
 
 
-/* plan and destination */
+/* Plan + destination */
 
 .ticket-details {
   position: relative;
-
   z-index: 2;
 
   display: grid;
@@ -877,8 +716,7 @@ button:active {
 }
 
 .ticket-detail {
-  padding:
-    4px 3px;
+  padding: 4px 3px;
 }
 
 .ticket-detail-value {
@@ -895,15 +733,13 @@ button:active {
 }
 
 
-/* reserved */
+/* Reserved for */
 
 .reserved-section {
   position: relative;
-
   z-index: 2;
 
-  padding:
-    2px 0 4px;
+  padding: 2px 0 4px;
 }
 
 .reserved-name {
@@ -920,26 +756,22 @@ button:active {
 }
 
 
-/* footer */
+/* Footer */
 
 .ticket-footer {
   position: relative;
-
   z-index: 2;
 
   display: flex;
 
   justify-content: space-between;
-
   align-items: center;
 
   margin-top: 19px;
-
   padding-top: 12px;
 
   border-top:
-    1px solid
-    rgba(185,109,115,.16);
+    1px solid rgba(185,109,115,.16);
 
   font-size: 8px;
 
@@ -949,7 +781,7 @@ button:active {
 }
 
 
-/* screenshot instruction */
+/* Screenshot note */
 
 .screenshot-note {
   margin-top: 14px;
@@ -974,7 +806,6 @@ button:active {
 
 .heart {
   position: fixed;
-
   bottom: -40px;
 
   pointer-events: none;
@@ -982,8 +813,7 @@ button:active {
   z-index: 9999;
 
   animation:
-    heartRise
-    4.5s linear forwards;
+    heartRise 4.5s linear forwards;
 }
 
 
@@ -995,14 +825,12 @@ button:active {
 
   .page {
     align-items: flex-start;
-
     padding-top: 24px;
     padding-bottom: 45px;
   }
 
   .card {
-    padding:
-      32px 22px;
+    padding: 32px 22px;
   }
 
   .wuv-cat {
@@ -1032,8 +860,7 @@ button:active {
   }
 
   .ticket {
-    padding:
-      25px 18px 18px;
+    padding: 25px 18px 18px;
   }
 
   .ticket-names {
@@ -1053,13 +880,11 @@ button:active {
 @keyframes backgroundMove {
 
   from {
-    background-position:
-      0% 0%;
+    background-position: 0% 0%;
   }
 
   to {
-    background-position:
-      100% 100%;
+    background-position: 100% 100%;
   }
 }
 
@@ -1105,21 +930,16 @@ button:active {
 
   0% {
     opacity: 0;
-
-    transform:
-      scale(.35);
+    transform: scale(.35);
   }
 
   70% {
-    transform:
-      scale(1.15);
+    transform: scale(1.15);
   }
 
   100% {
     opacity: 1;
-
-    transform:
-      scale(1);
+    transform: scale(1);
   }
 }
 
@@ -1128,13 +948,11 @@ button:active {
 
   0%,
   100% {
-    transform:
-      scale(1);
+    transform: scale(1);
   }
 
   50% {
-    transform:
-      scale(1.08);
+    transform: scale(1.08);
   }
 }
 
@@ -1143,13 +961,11 @@ button:active {
 
   0%,
   100% {
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
 
   50% {
-    transform:
-      translateY(-6px);
+    transform: translateY(-6px);
   }
 }
 
@@ -1178,13 +994,11 @@ button:active {
 
   0%,
   100% {
-    transform:
-      translate(0,0);
+    transform: translate(0,0);
   }
 
   50% {
-    transform:
-      translate(50px,35px);
+    transform: translate(50px,35px);
   }
 }
 
@@ -1193,13 +1007,11 @@ button:active {
 
   0%,
   100% {
-    transform:
-      translate(0,0);
+    transform: translate(0,0);
   }
 
   50% {
-    transform:
-      translate(-40px,-35px);
+    transform: translate(-40px,-35px);
   }
 }
 
@@ -1209,28 +1021,21 @@ button:active {
 
 <body>
 
-
 <div class="bg-glow glow-one"></div>
 <div class="bg-glow glow-two"></div>
-
 
 
 <!-- =========================
      PAGE 1
 ========================= -->
 
-<section
-  class="page active"
-  id="page1"
->
+<section class="page active" id="page1">
 
   <div class="card">
-
 
     <div class="envelope">
       💌
     </div>
-
 
     <div class="small">
       Special delivery
@@ -1258,7 +1063,6 @@ button:active {
       Hi, Joy 🤍
     </h1>
 
-
     <p>
       I made a tiny something for you.
     </p>
@@ -1281,7 +1085,6 @@ button:active {
 
     </div>
 
-
   </div>
 
 </section>
@@ -1292,13 +1095,9 @@ button:active {
      PAGE 2
 ========================= -->
 
-<section
-  class="page"
-  id="page2"
->
+<section class="page" id="page2">
 
   <div class="card">
-
 
     <div class="small">
       Just wondering...
@@ -1362,7 +1161,6 @@ button:active {
 
     </div>
 
-
   </div>
 
 </section>
@@ -1373,13 +1171,9 @@ button:active {
      PAGE 3
 ========================= -->
 
-<section
-  class="page"
-  id="page3"
->
+<section class="page" id="page3">
 
   <div class="card">
-
 
     <div class="reveal-heart">
       🤍
@@ -1429,7 +1223,6 @@ button:active {
 
     </div>
 
-
   </div>
 
 </section>
@@ -1437,13 +1230,10 @@ button:active {
 
 
 <!-- =========================
-     PAGE 4
+     PAGE 4 — INVITATION
 ========================= -->
 
-<section
-  class="page"
-  id="page4"
->
+<section class="page" id="page4">
 
   <div class="card">
 
@@ -1467,7 +1257,6 @@ button:active {
     <h1>
       Will you go on a date with me?
     </h1>
-
 
 
     <div class="date-box">
@@ -1494,7 +1283,6 @@ button:active {
       </div>
 
 
-
       <div class="date-row">
 
         <div class="date-icon">
@@ -1516,7 +1304,6 @@ button:active {
       </div>
 
 
-
       <div class="date-row">
 
         <div class="date-icon">
@@ -1536,7 +1323,6 @@ button:active {
         </div>
 
       </div>
-
 
 
       <div class="date-row">
@@ -1572,9 +1358,7 @@ button:active {
     </p>
 
 
-
     <div class="answer-area">
-
 
       <div class="answer-buttons">
 
@@ -1588,9 +1372,12 @@ button:active {
         </button>
 
 
+        <!--
+          ANCHORED NO:
+          This button stays right here.
+        -->
 
         <div class="no-wrapper">
-
 
           <button
             class="secondary"
@@ -1608,12 +1395,10 @@ button:active {
             ← try clicking no 👀
           </span>
 
-
         </div>
 
 
       </div>
-
 
     </div>
 
@@ -1638,10 +1423,7 @@ button:active {
      PAGE 5 — YES
 ========================= -->
 
-<section
-  class="page"
-  id="page5"
->
+<section class="page" id="page5">
 
   <div class="card">
 
@@ -1727,7 +1509,6 @@ button:active {
         </div>
 
 
-
         <div class="ticket-info">
 
           <div class="ticket-label">
@@ -1770,7 +1551,6 @@ button:active {
         </div>
 
 
-
         <div class="ticket-detail">
 
           <div class="ticket-label">
@@ -1791,7 +1571,7 @@ button:active {
 
 
 
-      <!-- RESERVED FOR -->
+      <!-- RESERVED -->
 
       <div class="reserved-section">
 
@@ -1804,7 +1584,6 @@ button:active {
         </div>
 
       </div>
-
 
 
       <div class="ticket-footer">
@@ -1821,7 +1600,6 @@ button:active {
 
 
     </div>
-
 
 
     <div class="screenshot-note">
@@ -1842,10 +1620,7 @@ button:active {
      PAGE 6 — REAL NO
 ========================= -->
 
-<section
-  class="page"
-  id="page6"
->
+<section class="page" id="page6">
 
   <div class="card">
 
@@ -1886,7 +1661,6 @@ button:active {
 
 function showPage(number) {
 
-
   document
     .querySelectorAll(".page")
     .forEach(page => {
@@ -1909,12 +1683,9 @@ function showPage(number) {
     newPage.querySelector(".card");
 
 
-  card.style.animation =
-    "none";
-
+  card.style.animation = "none";
 
   void card.offsetWidth;
-
 
   card.style.animation =
     "cardEnter .65s cubic-bezier(.22,.8,.35,1)";
@@ -1930,7 +1701,7 @@ function showPage(number) {
 
 
 /* =========================
-   PLAYFUL NO
+   ANCHORED PLAYFUL NO
 ========================= */
 
 let noAttempts = 0;
@@ -1985,27 +1756,30 @@ function handleNo() {
 
 
   const noButton =
-    document.getElementById(
-      "noBtn"
-    );
+    document.getElementById("noBtn");
 
 
   const yesButton =
-    document.getElementById(
-      "yesBtn"
-    );
+    document.getElementById("yesBtn");
 
 
   const hint =
-    document.getElementById(
-      "noHint"
-    );
+    document.getElementById("noHint");
 
 
 
   /*
-    After the jokes,
-    No becomes a genuine choice.
+    IMPORTANT:
+    No random movement is used here.
+
+    The No button stays anchored
+    in its normal position.
+  */
+
+
+  /*
+    After all playful attempts,
+    this becomes a genuine No.
   */
 
   if (noAttempts >= 5) {
@@ -2021,18 +1795,16 @@ function handleNo() {
 
 
 
-  /* Hide hint */
+  /* Hide hint after first click */
 
   if (hint) {
 
-    hint.style.opacity =
-      "0";
+    hint.style.opacity = "0";
 
 
     setTimeout(() => {
 
-      hint.style.display =
-        "none";
+      hint.style.display = "none";
 
     }, 300);
 
@@ -2043,54 +1815,42 @@ function handleNo() {
   /* Change No message */
 
   noButton.textContent =
-
-    noMessages[
-      noAttempts - 1
-    ];
+    noMessages[noAttempts - 1];
 
 
 
-  /* Shrink No */
+  /* Make No smaller */
 
   noButton.style.fontSize =
-
-    noSizes[
-      noAttempts - 1
-    ];
+    noSizes[noAttempts - 1];
 
 
   noButton.style.padding =
-
-    noPaddings[
-      noAttempts - 1
-    ];
+    noPaddings[noAttempts - 1];
 
 
 
-  /* Grow YES */
+  /* Make YES 10% bigger each time */
 
   const yesScale =
-
-    1 +
-    (noAttempts * .10);
+    1 + (noAttempts * .10);
 
 
   yesButton.style.transform =
-
     `scale(${yesScale})`;
 
 
 
   /*
-    Last joke.
-    Next click becomes real No.
+    Fifth click:
+    final playful message.
+
+    The NEXT click is a genuine No.
   */
 
   if (noAttempts === 5) {
 
-
     setTimeout(() => {
-
 
       noButton.textContent =
         "Okay, actually no 🥺";
@@ -2103,9 +1863,7 @@ function handleNo() {
       noButton.style.padding =
         "7px 11px";
 
-
     }, 700);
-
 
   }
 
@@ -2121,9 +1879,7 @@ function yes() {
 
 
   const yesButton =
-    document.getElementById(
-      "yesBtn"
-    );
+    document.getElementById("yesBtn");
 
 
   yesButton.textContent =
@@ -2146,12 +1902,10 @@ function yes() {
       i++
     ) {
 
-
       setTimeout(
         createHeart,
         i * 75
       );
-
 
     }
 
@@ -2170,13 +1924,10 @@ function createHeart() {
 
 
   const heart =
-    document.createElement(
-      "div"
-    );
+    document.createElement("div");
 
 
-  heart.className =
-    "heart";
+  heart.className = "heart";
 
 
   const hearts = [
@@ -2200,47 +1951,30 @@ function createHeart() {
 
     hearts[
       Math.floor(
-        Math.random()
-        * hearts.length
+        Math.random() * hearts.length
       )
     ];
 
 
   heart.style.left =
-
-    Math.random()
-    * 100
-    + "vw";
+    Math.random() * 100 + "vw";
 
 
   heart.style.fontSize =
-
     (
-      17
-      +
-      Math.random()
-      * 22
-    )
-
-    + "px";
+      17 +
+      Math.random() * 22
+    ) + "px";
 
 
   heart.style.animationDuration =
-
     (
-      3.5
-      +
-      Math.random()
-      * 1.5
-    )
-
-    + "s";
+      3.5 +
+      Math.random() * 1.5
+    ) + "s";
 
 
-  document.body
-    .appendChild(
-      heart
-    );
+  document.body.appendChild(heart);
 
 
   setTimeout(
