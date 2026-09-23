@@ -7,6 +7,7 @@
 <title>Something for you 🤍</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -19,23 +20,32 @@ html, body {
 body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
+
   background:
     radial-gradient(circle at top left, #fff8f4, transparent 35%),
     linear-gradient(135deg, #fffaf7, #fbe8e7);
+
   color: #493c3c;
+
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 
 /* PAGES */
 
 .page {
   display: none;
+
   min-height: 100vh;
+
   padding: 30px 22px;
+
   align-items: center;
   justify-content: center;
+
   text-align: center;
+
   animation: fade .7s ease;
 }
 
@@ -43,102 +53,143 @@ body {
   display: flex;
 }
 
+
 /* CARD */
 
 .card {
   width: min(420px, 100%);
-  background: rgba(255, 255, 255, .82);
-  border: 1px solid rgba(160, 110, 110, .18);
+
+  background: rgba(255,255,255,.82);
+
+  border: 1px solid rgba(160,110,110,.18);
+
   border-radius: 28px;
+
   padding: 42px 25px;
-  box-shadow: 0 20px 60px rgba(100, 50, 50, .10);
+
+  box-shadow: 0 20px 60px rgba(100,50,50,.10);
+
   backdrop-filter: blur(10px);
 }
+
 
 /* TEXT */
 
 .envelope {
   font-size: 55px;
+
   margin-bottom: 12px;
+
   animation: float 2s ease-in-out infinite;
 }
 
 h1 {
   font-size: 34px;
+
   margin: 8px 0 14px;
+
   font-weight: 500;
 }
 
 h2 {
   font-size: 28px;
+
   font-weight: 500;
+
   line-height: 1.3;
 }
 
 p {
   font-family: Arial, sans-serif;
+
   line-height: 1.7;
+
   color: #756565;
 }
 
 .small {
   font-size: 13px;
+
   letter-spacing: 2px;
+
   text-transform: uppercase;
 }
+
 
 /* BUTTONS */
 
 button {
   border: none;
+
   border-radius: 100px;
+
   padding: 15px 25px;
+
   margin: 8px;
+
   font-size: 15px;
+
   cursor: pointer;
+
   transition:
-    transform .25s ease,
-    padding .25s ease,
-    font-size .25s ease,
-    box-shadow .25s ease;
+    transform .3s ease,
+    font-size .3s ease,
+    padding .3s ease,
+    box-shadow .3s ease;
 }
 
 .primary {
   background: #b96d73;
+
   color: white;
-  box-shadow: 0 8px 20px rgba(185, 109, 115, .25);
+
+  box-shadow: 0 8px 20px rgba(185,109,115,.25);
 }
 
 .secondary {
   background: #f4e5e4;
+
   color: #8a5c60;
 }
+
 
 /* DETAILS */
 
 .details {
   margin: 25px 0;
+
   padding: 20px;
+
   border-top: 1px solid #ead5d4;
   border-bottom: 1px solid #ead5d4;
+
   font-family: Arial, sans-serif;
+
   line-height: 2;
 }
 
-/* CAT GIF */
+
+/* CAT */
 
 .wuv-cat {
   width: 145px;
   height: 145px;
+
   object-fit: cover;
+
   border-radius: 20px;
+
   margin: 0 auto 20px;
+
   display: block;
+
   border: 4px solid white;
-  box-shadow: 0 10px 25px rgba(100, 50, 50, .13);
+
+  box-shadow: 0 10px 25px rgba(100,50,50,.13);
 }
 
-/* ANSWER AREA */
+
+/* ANSWER BUTTONS */
 
 .answer-area {
   margin-top: 8px;
@@ -146,55 +197,133 @@ button {
 
 .answer-buttons {
   display: flex;
+
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  flex-wrap: wrap;
-}
 
-/* YES */
+  gap: 4px;
+
+  flex-wrap: wrap;
+
+  min-height: 85px;
+}
 
 #yesBtn {
-  position: relative;
-  z-index: 5;
   transform-origin: center;
 }
-
-/* NO */
 
 #noBtn {
-  position: relative;
-  z-index: 20;
   transform-origin: center;
 }
 
-/* HINT */
-
 .no-hint {
-  margin-top: 3px;
   font-family: Arial, sans-serif;
+
   font-size: 12px;
+
   font-style: italic;
+
   color: #a58c8c;
+
   opacity: .85;
+
+  margin-top: -3px;
+
   transition: opacity .3s ease;
 }
 
-/* FLOATING HEARTS */
+
+/* DATE TICKET */
+
+.ticket {
+  margin: 25px auto 10px;
+
+  max-width: 310px;
+
+  padding: 22px 18px;
+
+  border: 2px dashed #d9a5a8;
+
+  border-radius: 18px;
+
+  background: #fff8f7;
+
+  font-family: Arial, sans-serif;
+
+  position: relative;
+
+  box-shadow: 0 10px 30px rgba(100,50,50,.08);
+}
+
+.ticket-title {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+
+  letter-spacing: 2px;
+
+  color: #9e6267;
+
+  margin-bottom: 15px;
+}
+
+.ticket-names {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+
+  margin-bottom: 12px;
+
+  color: #493c3c;
+}
+
+.ticket-info {
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #756565;
+}
+
+.ticket-admit {
+  margin-top: 14px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #ead5d4;
+
+  font-size: 12px;
+
+  letter-spacing: 1.5px;
+
+  color: #a4696d;
+
+  font-weight: bold;
+}
+
+
+/* HEARTS */
 
 .heart {
   position: fixed;
+
   bottom: -40px;
+
   pointer-events: none;
+
   z-index: 9999;
+
   animation: rise 4s linear forwards;
 }
 
-/* SMALL SCREENS */
+
+/* SMALL PHONES */
 
 @media (max-height: 700px) {
+
   .page {
     align-items: flex-start;
+
     padding-top: 25px;
     padding-bottom: 40px;
   }
@@ -211,9 +340,11 @@ button {
   h1 {
     font-size: 29px;
   }
+
 }
 
 @media (max-width: 380px) {
+
   .card {
     padding-left: 18px;
     padding-right: 18px;
@@ -222,11 +353,14 @@ button {
   button {
     margin: 6px;
   }
+
 }
+
 
 /* ANIMATIONS */
 
 @keyframes fade {
+
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -236,19 +370,23 @@ button {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,100% {
     transform: translateY(0);
   }
 
   50% {
     transform: translateY(-8px);
   }
+
 }
 
 @keyframes rise {
+
   from {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
@@ -258,18 +396,25 @@ button {
     transform: translateY(-110vh) rotate(25deg);
     opacity: 0;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- PAGE 1 -->
 
 <section class="page active" id="page1">
+
   <div class="card">
 
-    <div class="envelope">💌</div>
+    <div class="envelope">
+      💌
+    </div>
 
     <div class="small">
       A little invitation
@@ -291,12 +436,15 @@ button {
     </button>
 
   </div>
+
 </section>
+
 
 
 <!-- PAGE 2 -->
 
 <section class="page" id="page2">
+
   <div class="card">
 
     <div class="small">
@@ -304,31 +452,42 @@ button {
     </div>
 
     <h2>
-      There's this girl I've really been wanting to take out.
+      There's this girl who somehow made my ordinary days feel a little less ordinary.
     </h2>
 
     <p>
-      She's pretty, sweet, and somehow makes my days a little better.
+      Between the random conversations,
+      eating together, little moments,
+      and everything in between...
     </p>
 
     <p>
-      And well...
+      I realized I really, really
+      enjoy having her around.
+    </p>
+
+    <p>
+      And I think you know where
+      this is going... 😌
     </p>
 
     <button
       class="primary"
       onclick="showPage(3)"
     >
-      Who is she? 👀
+      I have an idea 👀
     </button>
 
   </div>
+
 </section>
+
 
 
 <!-- PAGE 3 -->
 
 <section class="page" id="page3">
+
   <div class="card">
 
     <div style="font-size:45px;">
@@ -336,27 +495,35 @@ button {
     </div>
 
     <h1>
-      It's you, wuv.
+      Of course it's you, wuv.
     </h1>
 
     <p>
-      Obviously. Who else did you think? 😌
+      You've made me happier
+      than you probably realize.
+      <br><br>
+      So I wanted to make our
+      next little memory a bit
+      more special. 🤍
     </p>
 
     <button
       class="primary"
       onclick="showPage(4)"
     >
-      Continue
+      Okayyy, what is it? 👀
     </button>
 
   </div>
+
 </section>
+
 
 
 <!-- PAGE 4 -->
 
 <section class="page" id="page4">
+
   <div class="card">
 
     <img
@@ -374,18 +541,28 @@ button {
     </h1>
 
     <div class="details">
+
       📅 Monday, October 5, 2026
+
       <br>
+
       🕔 5:00 PM
+
       <br>
+
       🍽️ Dinner Date
+
       <br>
+
       📍 I'll take care of the rest
+
     </div>
 
     <p>
-      All you have to do is show up and let me take you out. 🤍
+      All you have to do is show up
+      and let me take you out. 🤍
     </p>
+
 
     <div class="answer-area">
 
@@ -399,6 +576,7 @@ button {
           YES! 🤍
         </button>
 
+
         <button
           class="secondary"
           id="noBtn"
@@ -408,6 +586,7 @@ button {
         </button>
 
       </div>
+
 
       <div
         class="no-hint"
@@ -419,12 +598,15 @@ button {
     </div>
 
   </div>
+
 </section>
 
 
-<!-- PAGE 5 -->
+
+<!-- PAGE 5: YES -->
 
 <section class="page" id="page5">
+
   <div class="card">
 
     <div style="font-size:55px;">
@@ -432,7 +614,7 @@ button {
     </div>
 
     <div class="small">
-      It's official
+      Date confirmed
     </div>
 
     <h1>
@@ -443,25 +625,69 @@ button {
       It's a date, wuv.
     </h2>
 
-    <div class="details">
-      October 5 • 5:00 PM
+
+    <!-- DATE TICKET -->
+
+    <div class="ticket">
+
+      <div class="ticket-title">
+        ♡ DATE TICKET ♡
+      </div>
+
+      <div class="ticket-names">
+        JOY + JES
+      </div>
+
+      <div class="ticket-info">
+
+        📅 OCTOBER 5, 2026
+
+        <br>
+
+        🕔 5:00 PM
+
+        <br>
+
+        🍽️ DINNER FOR TWO
+
+      </div>
+
+      <div class="ticket-admit">
+        ADMIT ONE WUV 🤍
+      </div>
+
     </div>
+
 
     <p>
       I'll take care of everything.
       <br><br>
-      Just bring yourself.
+
+      Just bring yourself. 🤍
+
       <br><br>
-      Can't wait to spend the evening with you. 🤍
+
+      Can't wait to make another
+      memory with you.
+      <br><br>
+
+      <strong>
+        P.S. Screenshot this.
+        This is your official
+        date ticket 🎟️🤍
+      </strong>
     </p>
 
   </div>
+
 </section>
+
 
 
 <!-- PAGE 6: REAL NO -->
 
 <section class="page" id="page6">
+
   <div class="card">
 
     <div style="font-size:55px;">
@@ -475,89 +701,126 @@ button {
     <p>
       Had to try HAHAHA.
       <br><br>
+
       No pressure. 🤍
     </p>
 
   </div>
+
 </section>
+
 
 
 <script>
 
-/* ---------------------------
-   PAGE NAVIGATION
---------------------------- */
+
+/* PAGE NAVIGATION */
 
 function showPage(number) {
 
   document
     .querySelectorAll(".page")
     .forEach(page => {
+
       page.classList.remove("active");
+
     });
 
+
   document
-    .getElementById("page" + number)
+    .getElementById(
+      "page" + number
+    )
     .classList.add("active");
+
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
 
 
-/* ---------------------------
-   PLAYFUL NO BUTTON
---------------------------- */
+
+/* --------------------------
+   PLAYFUL NO
+-------------------------- */
 
 let noAttempts = 0;
 
+
 const noMessages = [
-  "Ay sure? 🤨",
-  "Wuv??? 😭",
-  "Think about it 😔",
-  "Last chance HAHAHA",
+
+  "Sure ka, wuv? 🤨",
+
+  "Joy??? 😭",
+
+  "Think again HAHAHA",
+
+  "Grabe ka 😔",
+
   "no 🤏"
+
 ];
+
 
 const noSizes = [
+
   "14px",
+
   "12px",
+
   "10px",
+
   "8px",
+
   "6px"
+
 ];
 
+
 const noPaddings = [
+
   "13px 22px",
+
   "11px 19px",
+
   "9px 16px",
+
   "7px 13px",
+
   "5px 10px"
+
 ];
 
 
 function handleNo() {
 
+
   const noButton =
     document.getElementById("noBtn");
 
+
   const yesButton =
     document.getElementById("yesBtn");
+
 
   const hint =
     document.getElementById("noHint");
 
 
   /*
-    After all 5 joke attempts,
-    the next click becomes a real No.
+    After all the joke attempts,
+    let her genuinely choose No.
   */
 
   if (noAttempts >= 5) {
+
     showPage(6);
+
     return;
+
   }
 
 
@@ -567,49 +830,52 @@ function handleNo() {
   /* Hide the hint */
 
   if (hint) {
+
     hint.style.opacity = "0";
 
-    setTimeout(() => {
-      hint.style.visibility = "hidden";
-    }, 300);
   }
 
 
-  /* Change the No message */
+  /* Change No text */
 
   noButton.textContent =
-    noMessages[noAttempts - 1];
+    noMessages[
+      noAttempts - 1
+    ];
 
 
-  /* Physically shrink No */
+  /*
+    SHRINK NO
+    It stays exactly where it is.
+  */
 
   noButton.style.fontSize =
-    noSizes[noAttempts - 1];
+    noSizes[
+      noAttempts - 1
+    ];
+
 
   noButton.style.padding =
-    noPaddings[noAttempts - 1];
+    noPaddings[
+      noAttempts - 1
+    ];
 
 
-  /* Make YES progressively bigger */
+  /*
+    GROW YES 😂
+  */
 
   const yesScale =
     1 + (noAttempts * 0.10);
+
 
   yesButton.style.transform =
     `scale(${yesScale})`;
 
 
   /*
-    Move No somewhere else
-    on the screen.
-  */
-
-  moveNoButton(noButton);
-
-
-  /*
-    After attempt #5,
-    she can actually click No.
+    After the fifth joke,
+    make it clear No is now real.
   */
 
   if (noAttempts === 5) {
@@ -619,118 +885,77 @@ function handleNo() {
       noButton.textContent =
         "Okay, actually no 🥺";
 
+
       noButton.style.fontSize =
-        "11px";
+        "10px";
+
 
       noButton.style.padding =
-        "8px 13px";
+        "7px 11px";
 
-    }, 500);
+    }, 700);
+
   }
+
 }
 
 
-/* ---------------------------
-   MOVE NO BUTTON
---------------------------- */
 
-function moveNoButton(button) {
-
-  button.style.position = "fixed";
-
-  /*
-    Keep it away from the extreme
-    edges of the screen.
-  */
-
-  const padding = 25;
-
-  const buttonWidth =
-    button.offsetWidth;
-
-  const buttonHeight =
-    button.offsetHeight;
-
-  const maxX =
-    Math.max(
-      padding,
-      window.innerWidth
-      - buttonWidth
-      - padding
-    );
-
-  const maxY =
-    Math.max(
-      padding,
-      window.innerHeight
-      - buttonHeight
-      - padding
-    );
-
-
-  const randomX =
-    padding
-    + Math.random()
-    * (maxX - padding);
-
-
-  const randomY =
-    padding
-    + Math.random()
-    * (maxY - padding);
-
-
-  button.style.left =
-    randomX + "px";
-
-  button.style.top =
-    randomY + "px";
-}
-
-
-/* ---------------------------
+/* --------------------------
    YES
---------------------------- */
+-------------------------- */
 
 function yes() {
 
+
   showPage(5);
 
-  /*
-    Heart explosion 🤍
-  */
 
-  for (let i = 0; i < 40; i++) {
+  for (
+    let i = 0;
+    i < 45;
+    i++
+  ) {
 
     setTimeout(
       createHeart,
-      i * 80
+      i * 75
     );
 
   }
+
 }
 
 
-/* ---------------------------
-   FLOATING HEARTS
---------------------------- */
+
+/* HEARTS */
 
 function createHeart() {
+
 
   const heart =
     document.createElement("div");
 
+
   heart.className =
     "heart";
 
+
   const hearts = [
+
     "🤍",
+
     "🩷",
-    "🤍",
-    "💕"
+
+    "💕",
+
+    "🤍"
+
   ];
 
+
   heart.textContent =
+
     hearts[
       Math.floor(
         Math.random()
@@ -738,22 +963,36 @@ function createHeart() {
       )
     ];
 
+
   heart.style.left =
-    Math.random() * 100 + "vw";
+
+    Math.random()
+    * 100
+    + "vw";
+
 
   heart.style.fontSize =
+
     (
       16
-      + Math.random() * 24
+      + Math.random()
+      * 24
     )
+
     + "px";
 
-  document.body.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 4000);
+  document.body
+    .appendChild(heart);
+
+
+  setTimeout(
+    () => heart.remove(),
+    4000
+  );
+
 }
+
 
 </script>
 
