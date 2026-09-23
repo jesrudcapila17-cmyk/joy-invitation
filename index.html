@@ -7,6 +7,7 @@
 <title>Something for you 🤍</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -19,23 +20,32 @@ html, body {
 body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
+
   background:
     radial-gradient(circle at top left, #fff8f4, transparent 35%),
     linear-gradient(135deg, #fffaf7, #fbe8e7);
+
   color: #493c3c;
 
-  /* allows scrolling on phones */
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+
+/* PAGES */
+
 .page {
   display: none;
+
   min-height: 100vh;
+
   padding: 30px 22px;
+
   align-items: center;
   justify-content: center;
+
   text-align: center;
+
   animation: fade .7s ease;
 }
 
@@ -43,60 +53,96 @@ body {
   display: flex;
 }
 
+
+/* CARD */
+
 .card {
   width: min(420px, 100%);
+
   background: rgba(255,255,255,.82);
+
   border: 1px solid rgba(160,110,110,.18);
+
   border-radius: 28px;
+
   padding: 42px 25px;
-  box-shadow: 0 20px 60px rgba(100,50,50,.10);
+
+  box-shadow:
+    0 20px 60px rgba(100,50,50,.10);
+
   backdrop-filter: blur(10px);
 }
 
+
+/* TEXT */
+
 .envelope {
   font-size: 55px;
+
   margin-bottom: 12px;
-  animation: float 2s ease-in-out infinite;
+
+  animation:
+    float 2s ease-in-out infinite;
 }
 
 h1 {
   font-size: 34px;
+
   margin: 8px 0 14px;
+
   font-weight: 500;
 }
 
 h2 {
   font-size: 28px;
+
   font-weight: 500;
+
   line-height: 1.3;
 }
 
 p {
   font-family: Arial, sans-serif;
+
   line-height: 1.7;
+
   color: #756565;
 }
 
 .small {
   font-size: 13px;
+
   letter-spacing: 2px;
+
   text-transform: uppercase;
 }
 
+
+/* BUTTONS */
+
 button {
   border: none;
+
   border-radius: 100px;
+
   padding: 15px 25px;
+
   margin: 8px;
+
   font-size: 15px;
+
   cursor: pointer;
+
   transition: .25s;
 }
 
 .primary {
   background: #b96d73;
+
   color: white;
-  box-shadow: 0 8px 20px rgba(185,109,115,.25);
+
+  box-shadow:
+    0 8px 20px rgba(185,109,115,.25);
 }
 
 .primary:hover {
@@ -105,46 +151,125 @@ button {
 
 .secondary {
   background: #f4e5e4;
+
   color: #8a5c60;
 }
 
+
+/* DATE DETAILS */
+
 .details {
   margin: 25px 0;
+
   padding: 20px;
-  border-top: 1px solid #ead5d4;
-  border-bottom: 1px solid #ead5d4;
+
+  border-top:
+    1px solid #ead5d4;
+
+  border-bottom:
+    1px solid #ead5d4;
+
   font-family: Arial, sans-serif;
+
   line-height: 2;
 }
 
-/* CAT GIF */
+
+/* CAT */
+
 .wuv-cat {
   width: 145px;
   height: 145px;
+
   object-fit: cover;
+
   border-radius: 20px;
+
   margin: 0 auto 20px;
+
   display: block;
+
   border: 4px solid white;
-  box-shadow: 0 10px 25px rgba(100,50,50,.13);
+
+  box-shadow:
+    0 10px 25px rgba(100,50,50,.13);
 }
 
-.heart {
-  position: fixed;
-  bottom: -30px;
-  font-size: 22px;
-  animation: rise 4s linear forwards;
-  pointer-events: none;
+
+/* YES / NO AREA */
+
+.answer-buttons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  flex-wrap: wrap;
+
+  margin-top: 5px;
+}
+
+.no-area {
+  display: flex;
+
+  align-items: center;
+}
+
+.no-hint {
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #a58c8c;
+
+  font-style: italic;
+
+  white-space: nowrap;
+
+  opacity: .8;
+}
+
+#yesBtn {
+  transition:
+    transform .3s ease,
+    background .3s ease;
 }
 
 #noBtn {
   position: relative;
+
+  transition:
+    transform .2s ease;
 }
 
-/* slightly tighter on small phones */
+
+/* FLOATING HEARTS */
+
+.heart {
+  position: fixed;
+
+  bottom: -30px;
+
+  font-size: 22px;
+
+  animation:
+    rise 4s linear forwards;
+
+  pointer-events: none;
+
+  z-index: 9999;
+}
+
+
+/* SMALL PHONES */
+
 @media (max-height: 700px) {
+
   .page {
     align-items: flex-start;
+
     padding-top: 25px;
     padding-bottom: 40px;
   }
@@ -161,52 +286,85 @@ button {
   h1 {
     font-size: 29px;
   }
+
 }
 
+
+/* ANIMATIONS */
+
 @keyframes fade {
+
   from {
     opacity: 0;
-    transform: translateY(12px);
+
+    transform:
+      translateY(12px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
+
 }
 
+
 @keyframes float {
-  0%,100% {
-    transform: translateY(0);
+
+  0%, 100% {
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform:
+      translateY(-8px);
   }
+
 }
 
+
 @keyframes rise {
+
   from {
-    transform: translateY(0) rotate(0deg);
+    transform:
+      translateY(0)
+      rotate(0deg);
+
     opacity: 1;
   }
 
   to {
-    transform: translateY(-110vh) rotate(25deg);
+    transform:
+      translateY(-110vh)
+      rotate(25deg);
+
     opacity: 0;
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 
-<!-- OPENING -->
-<section class="page active" id="page1">
+<!-- PAGE 1: OPENING -->
+
+<section
+  class="page active"
+  id="page1"
+>
+
   <div class="card">
 
-    <div class="envelope">💌</div>
+    <div class="envelope">
+      💌
+    </div>
 
     <div class="small">
       A little invitation
@@ -217,7 +375,8 @@ button {
     </h1>
 
     <p>
-      I have a tiny question for you...
+      I have a tiny question
+      for you...
     </p>
 
     <button
@@ -228,11 +387,18 @@ button {
     </button>
 
   </div>
+
 </section>
 
 
-<!-- BUILD UP -->
-<section class="page" id="page2">
+
+<!-- PAGE 2: BUILD UP -->
+
+<section
+  class="page"
+  id="page2"
+>
+
   <div class="card">
 
     <div class="small">
@@ -240,13 +406,15 @@ button {
     </div>
 
     <h2>
-      There's this girl I've really
-      been wanting to take out.
+      There's this girl
+      I've really been wanting
+      to take out.
     </h2>
 
     <p>
-      She's pretty, sweet, and somehow
-      makes my days a little better.
+      She's pretty, sweet,
+      and somehow makes my days
+      a little better.
     </p>
 
     <p>
@@ -261,23 +429,31 @@ button {
     </button>
 
   </div>
+
 </section>
 
 
-<!-- REVEAL -->
-<section class="page" id="page3">
+
+<!-- PAGE 3: REVEAL -->
+
+<section
+  class="page"
+  id="page3"
+>
+
   <div class="card">
 
-    <div style="font-size:45px">
+    <div style="font-size:45px;">
       🤍
     </div>
 
     <h1>
-      It's you.
+      It's you, wuv.
     </h1>
 
     <p>
-      Obviously. Who else did you think? 😌
+      Obviously.
+      Who else did you think? 😌
     </p>
 
     <button
@@ -288,207 +464,505 @@ button {
     </button>
 
   </div>
+
 </section>
 
 
-<!-- INVITATION -->
-<section class="page" id="page4">
+
+<!-- PAGE 4: DATE INVITATION -->
+
+<section
+  class="page"
+  id="page4"
+>
+
   <div class="card">
 
-    <!-- YOUR CAT GIF -->
+
+    <!-- CAT GIF -->
+
     <img
       src="./wuv-cat.gif.gif"
       class="wuv-cat"
       alt="Kitten holding a rose"
     >
 
+
     <div class="small">
       So, wuv...
     </div>
 
+
     <h1>
-      Will you go on a date with me?
+      Will you go on a date
+      with me?
     </h1>
+
 
     <div class="details">
 
       📅 Monday, October 5, 2026
+
       <br>
 
       🕔 5:00 PM
+
       <br>
 
       🍽️ Dinner Date
+
       <br>
 
       📍 I'll take care of the rest
 
     </div>
 
+
     <p>
-      All you have to do is show up
-      and let me take you out. 🤍
+      All you have to do is
+      show up and let me
+      take you out. 🤍
     </p>
 
-    <div>
+
+    <!-- YES / NO -->
+
+    <div class="answer-buttons">
+
 
       <button
         class="primary"
+        id="yesBtn"
         onclick="yes()"
       >
         YES! 🤍
       </button>
 
-      <button
-        class="secondary"
-        id="noBtn"
-        onmouseover="runAway()"
-        ontouchstart="runAway()"
-      >
-        No 😔
-      </button>
+
+      <div class="no-area">
+
+        <button
+          class="secondary"
+          id="noBtn"
+          onmouseover="runAway()"
+          ontouchstart="runAway()"
+        >
+          No 😔
+        </button>
+
+
+        <span
+          class="no-hint"
+          id="noHint"
+        >
+          ← try clicking no 👀
+        </span>
+
+      </div>
+
 
     </div>
 
+
   </div>
+
 </section>
 
 
-<!-- ACCEPTED -->
-<section class="page" id="page5">
+
+<!-- PAGE 5: SHE SAID YES -->
+
+<section
+  class="page"
+  id="page5"
+>
+
   <div class="card">
 
-    <div style="font-size:55px">
+
+    <div style="font-size:55px;">
       🥹🤍
     </div>
+
 
     <div class="small">
       It's official
     </div>
 
+
     <h1>
       YAYYY!
     </h1>
+
 
     <h2>
       It's a date, wuv.
     </h2>
 
+
     <div class="details">
       October 5 • 5:00 PM
     </div>
 
+
     <p>
-      I'll take care of everything.
+
+      I'll take care
+      of everything.
+
       <br><br>
 
       Just bring yourself.
+
       <br><br>
 
-      Can't wait to spend the evening
-      with you. 🤍
+      Can't wait to spend
+      the evening with you. 🤍
+
     </p>
 
+
   </div>
+
 </section>
 
 
+
 <script>
+
+
+/* PAGE NAVIGATION */
 
 function showPage(number) {
 
   document
     .querySelectorAll(".page")
-    .forEach(page =>
-      page.classList.remove("active")
-    );
+    .forEach(page => {
+
+      page.classList.remove("active");
+
+    });
+
 
   document
-    .getElementById("page" + number)
+    .getElementById(
+      "page" + number
+    )
     .classList.add("active");
 
-  /* return to top when changing pages */
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
+
+
+
+/* NO BUTTON */
+
+let noAttempts = 0;
 
 
 function runAway() {
 
-  const button =
-    document.getElementById("noBtn");
+  const noButton =
+    document.getElementById(
+      "noBtn"
+    );
 
-  button.style.position = "fixed";
+  const yesButton =
+    document.getElementById(
+      "yesBtn"
+    );
 
-  const maxX =
-    window.innerWidth -
-    button.offsetWidth -
-    20;
+  const hint =
+    document.getElementById(
+      "noHint"
+    );
 
-  const maxY =
-    window.innerHeight -
-    button.offsetHeight -
-    20;
 
-  button.style.left =
-    Math.max(
-      10,
-      Math.random() * maxX
-    ) + "px";
+  noAttempts++;
 
-  button.style.top =
-    Math.max(
-      10,
-      Math.random() * maxY
-    ) + "px";
+
+  const messages = [
+
+    "Ay sure? 🤨",
+
+    "Wuv??? 😭",
+
+    "Think about it 😔",
+
+    "Last chance HAHAHA",
+
+    "no 🤏"
+
+  ];
+
+
+  /* remove hint once she discovers it */
+
+  if (hint) {
+
+    hint.style.display =
+      "none";
+
+  }
+
+
+  /*
+     FIRST FIVE ATTEMPTS:
+     RUN AWAY 😂
+  */
+
+  if (noAttempts <= 5) {
+
+
+    noButton.innerHTML =
+      messages[
+        noAttempts - 1
+      ];
+
+
+    noButton.style.position =
+      "fixed";
+
+
+    const maxX =
+      window.innerWidth
+      - noButton.offsetWidth
+      - 20;
+
+
+    const maxY =
+      window.innerHeight
+      - noButton.offsetHeight
+      - 20;
+
+
+    noButton.style.left =
+
+      Math.max(
+        10,
+        Math.random() * maxX
+      )
+
+      + "px";
+
+
+    noButton.style.top =
+
+      Math.max(
+        10,
+        Math.random() * maxY
+      )
+
+      + "px";
+
+
+    /* NO gets smaller */
+
+    const noScale =
+
+      Math.max(
+        .65,
+        1 - noAttempts * .07
+      );
+
+
+    noButton.style.transform =
+
+      `scale(${noScale})`;
+
+
+    /* YES gets bigger 😂 */
+
+    const yesScale =
+
+      1 + noAttempts * .07;
+
+
+    yesButton.style.transform =
+
+      `scale(${yesScale})`;
+
+
+  }
+
+
+  /*
+     AFTER THE JOKE:
+     ALLOW A REAL NO
+  */
+
+  else {
+
+
+    noButton.style.position =
+      "relative";
+
+
+    noButton.style.left =
+      "auto";
+
+
+    noButton.style.top =
+      "auto";
+
+
+    noButton.style.transform =
+      "scale(1)";
+
+
+    noButton.innerHTML =
+      "Okay, actually no 🥺";
+
+
+    noButton.onmouseover =
+      null;
+
+
+    noButton.ontouchstart =
+      null;
+
+
+    noButton.onclick =
+      realNo;
+
+  }
+
 }
 
+
+
+/* REAL NO */
+
+function realNo() {
+
+
+  document
+    .querySelector(
+      "#page4 .card"
+    )
+    .innerHTML = `
+
+
+      <div
+        style="font-size:50px;"
+      >
+        🥺
+      </div>
+
+
+      <h1>
+        Okay okay, wuv 😭
+      </h1>
+
+
+      <p>
+
+        Had to try HAHAHA.
+
+        <br><br>
+
+        No pressure. 🤍
+
+      </p>
+
+
+    `;
+
+}
+
+
+
+/* YES */
 
 function yes() {
 
+
   showPage(5);
 
-  for (let i = 0; i < 30; i++) {
+
+  for (
+    let i = 0;
+    i < 35;
+    i++
+  ) {
+
 
     setTimeout(
       createHeart,
-      i * 100
+      i * 90
     );
 
+
   }
+
 }
 
+
+
+/* HEART ANIMATION */
 
 function createHeart() {
 
-  const heart =
-    document.createElement("div");
 
-  heart.className = "heart";
+  const heart =
+    document.createElement(
+      "div"
+    );
+
+
+  heart.className =
+    "heart";
+
 
   heart.innerHTML =
+
     Math.random() > .5
+
       ? "🤍"
+
       : "🩷";
 
+
   heart.style.left =
-    Math.random() * 100 + "vw";
+
+    Math.random() * 100
+    + "vw";
+
 
   heart.style.fontSize =
-    (16 + Math.random() * 22)
+
+    (
+      16
+      + Math.random() * 22
+    )
+
     + "px";
 
-  document.body.appendChild(heart);
+
+  document.body
+    .appendChild(
+      heart
+    );
+
 
   setTimeout(
+
     () => heart.remove(),
+
     4000
+
   );
+
 }
 
+
 </script>
+
 
 </body>
 </html>
