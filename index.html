@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Something for you 🤍</title>
+<title>For Joy 🤍</title>
 
 <style>
 
-/* =========================
+/* =========================================
    BASE
-========================= */
+========================================= */
 
 * {
   box-sizing: border-box;
@@ -50,26 +50,22 @@ body {
   background-size: 130% 130%;
 
   animation:
-    backgroundMove 12s ease-in-out
+    backgroundMove
+    12s ease-in-out
     infinite alternate;
 }
 
 
-/* =========================
-   BACKGROUND GLOWS
-========================= */
+/* =========================================
+   BACKGROUND
+========================================= */
 
 .bg-glow {
   position: fixed;
-
   border-radius: 50%;
-
   filter: blur(55px);
-
   pointer-events: none;
-
   z-index: -1;
-
   opacity: .45;
 }
 
@@ -83,8 +79,8 @@ body {
   left: -70px;
 
   animation:
-    glowFloatOne 10s
-    ease-in-out infinite;
+    glowFloatOne
+    10s ease-in-out infinite;
 }
 
 .glow-two {
@@ -97,14 +93,14 @@ body {
   right: -80px;
 
   animation:
-    glowFloatTwo 12s
-    ease-in-out infinite;
+    glowFloatTwo
+    12s ease-in-out infinite;
 }
 
 
-/* =========================
+/* =========================================
    PAGES
-========================= */
+========================================= */
 
 .page {
   display: none;
@@ -124,9 +120,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================
    CARD
-========================= */
+========================================= */
 
 .card {
   width: min(430px, 100%);
@@ -136,35 +132,29 @@ body {
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.94),
-      rgba(255,250,249,.86)
+      rgba(255,255,255,.95),
+      rgba(255,250,249,.88)
     );
 
   border:
-    1px solid
-    rgba(170,110,115,.16);
+    1px solid rgba(170,110,115,.16);
 
   border-radius: 30px;
 
   padding: 44px 27px;
 
   box-shadow:
-    0 25px 70px
-    rgba(108,60,64,.11),
-    inset 0 1px 0
-    rgba(255,255,255,.9);
+    0 25px 70px rgba(108,60,64,.11),
+    inset 0 1px 0 rgba(255,255,255,.9);
 
   backdrop-filter: blur(14px);
 
   overflow: hidden;
 
   animation:
-    cardEnter .65s
-    cubic-bezier(.22,.8,.35,1);
+    cardEnter
+    .65s cubic-bezier(.22,.8,.35,1);
 }
-
-
-/* little corner hearts */
 
 .card::before {
   content: "♡";
@@ -197,9 +187,9 @@ body {
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
 h1 {
   margin: 9px 0 15px;
@@ -218,7 +208,7 @@ h2 {
   margin: 18px 0;
 
   font-size:
-    clamp(25px, 6vw, 30px);
+    clamp(24px, 6vw, 29px);
 
   line-height: 1.35;
 
@@ -226,8 +216,7 @@ h2 {
 }
 
 p {
-  font-family:
-    Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
   line-height: 1.7;
 
@@ -237,13 +226,13 @@ p {
 }
 
 .small {
-  font-size: 12px;
+  font-size: 11px;
 
   letter-spacing: 2.5px;
 
   text-transform: uppercase;
 
-  color: #766363;
+  color: #9a797b;
 }
 
 .soft-text {
@@ -271,12 +260,12 @@ p {
 }
 
 
-/* =========================
-   ENVELOPE
-========================= */
+/* =========================================
+   OPENING
+========================================= */
 
 .envelope {
-  font-size: 58px;
+  font-size: 60px;
 
   margin-bottom: 14px;
 
@@ -288,9 +277,74 @@ p {
 }
 
 
-/* =========================
+/* address-style label */
+
+.address-label {
+  width: min(320px, 100%);
+
+  margin:
+    21px auto 25px;
+
+  padding:
+    18px 18px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffafa,
+      #fcecec
+    );
+
+  border:
+    1px dashed
+    rgba(185,109,115,.38);
+
+  box-shadow:
+    inset 0 1px 0 white;
+}
+
+.address-to {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  color: #b17d80;
+
+  margin-bottom: 7px;
+}
+
+.address-name {
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  color: #604b4c;
+}
+
+.address-from {
+  margin-top: 10px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  color: #a18485;
+}
+
+
+/* =========================================
    BUTTONS
-========================= */
+========================================= */
 
 button {
   border: none;
@@ -312,7 +366,8 @@ button {
     transform .25s ease,
     box-shadow .25s ease,
     font-size .3s ease,
-    padding .3s ease;
+    padding .3s ease,
+    opacity .25s ease;
 }
 
 button:active {
@@ -351,9 +406,9 @@ button:active {
 }
 
 
-/* =========================
+/* =========================================
    PROGRESS
-========================= */
+========================================= */
 
 .progress {
   margin-top: 28px;
@@ -387,9 +442,9 @@ button:active {
 }
 
 
-/* =========================
+/* =========================================
    REVEAL HEART
-========================= */
+========================================= */
 
 .reveal-heart {
   font-size: 51px;
@@ -407,9 +462,9 @@ button:active {
 }
 
 
-/* =========================
+/* =========================================
    CAT
-========================= */
+========================================= */
 
 .cat-wrap {
   display: inline-block;
@@ -432,8 +487,7 @@ button:active {
   border-radius: 25px;
 
   border:
-    5px solid
-    rgba(255,255,255,.95);
+    5px solid rgba(255,255,255,.95);
 
   box-shadow:
     0 13px 30px
@@ -441,9 +495,9 @@ button:active {
 }
 
 
-/* =========================
+/* =========================================
    DATE DETAILS
-========================= */
+========================================= */
 
 .date-box {
   margin: 25px 0;
@@ -460,14 +514,14 @@ button:active {
     );
 
   border:
-    1px solid
-    rgba(185,109,115,.13);
+    1px solid rgba(185,109,115,.13);
 
   box-shadow:
     inset 0 1px 0 white;
 
   font-family:
-    Arial, sans-serif;
+    Arial,
+    sans-serif;
 }
 
 .date-row {
@@ -480,8 +534,7 @@ button:active {
   padding: 8px 7px;
 
   border-bottom:
-    1px solid
-    rgba(185,109,115,.10);
+    1px solid rgba(185,109,115,.10);
 }
 
 .date-row:last-child {
@@ -515,9 +568,9 @@ button:active {
 }
 
 
-/* =========================
-   ANSWER BUTTONS
-========================= */
+/* =========================================
+   YES / NO
+========================================= */
 
 .answer-area {
   margin-top: 10px;
@@ -536,16 +589,10 @@ button:active {
   min-height: 92px;
 }
 
-#yesBtn {
-  transform-origin: center;
-}
-
+#yesBtn,
 #noBtn {
   transform-origin: center;
 }
-
-
-/* No + hint together */
 
 .no-wrapper {
   display: flex;
@@ -559,7 +606,8 @@ button:active {
 
 .no-hint {
   font-family:
-    Arial, sans-serif;
+    Arial,
+    sans-serif;
 
   font-size: 11px;
 
@@ -576,43 +624,50 @@ button:active {
 }
 
 
-/* =========================
-   DATE TICKET
-========================= */
+/* =========================================
+   PREMIUM DATE TICKET
+========================================= */
 
 .ticket {
-  width: min(320px, 100%);
+  width: min(340px, 100%);
 
-  margin: 25px auto 20px;
+  margin:
+    28px auto 20px;
 
   position: relative;
 
-  padding: 24px 20px;
+  padding:
+    28px 23px 20px;
 
   background:
     linear-gradient(
       145deg,
-      #fff9f7,
-      #fceaea
+      #fffdfb 0%,
+      #fff6f4 50%,
+      #fbe8e8 100%
     );
 
   border:
-    2px dashed #d8a1a5;
+    1.5px solid
+    rgba(190,119,125,.45);
 
-  border-radius: 19px;
+  border-radius: 22px;
 
   box-shadow:
-    0 15px 35px
-    rgba(100,50,50,.10);
+    0 18px 45px
+    rgba(112,62,66,.12),
+    inset 0 1px 0
+    rgba(255,255,255,.95);
 
   font-family:
-    Arial, sans-serif;
+    Arial,
+    sans-serif;
 
-  overflow: visible;
+  overflow: hidden;
 }
 
 
-/* Ticket cutouts */
+/* ticket cutouts */
 
 .ticket::before,
 .ticket::after {
@@ -620,17 +675,16 @@ button:active {
 
   position: absolute;
 
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
 
   border-radius: 50%;
 
   background: #f9e8e7;
 
-  top: 50%;
+  top: 48%;
 
-  transform:
-    translateY(-50%);
+  z-index: 3;
 }
 
 .ticket::before {
@@ -641,80 +695,315 @@ button:active {
   right: -14px;
 }
 
-.ticket-top {
+
+/* ticket watermark */
+
+.ticket-watermark {
+  position: absolute;
+
+  top: 42%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-12deg);
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 18px;
+  font-size: 78px;
 
-  letter-spacing: 2.5px;
+  white-space: nowrap;
 
-  color: #a46569;
+  color:
+    rgba(185,109,115,.045);
 
-  margin-bottom: 17px;
+  pointer-events: none;
+}
+
+
+/* ticket header */
+
+.ticket-top {
+  position: relative;
+
+  z-index: 2;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  color: #ae7378;
+
+  margin-bottom: 12px;
 }
 
 .ticket-names {
+  position: relative;
+
+  z-index: 2;
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 27px;
+  font-size: 29px;
+
+  letter-spacing: 1px;
 
   color: #513f40;
 
-  margin-bottom: 17px;
+  margin-bottom: 6px;
 }
 
+.ticket-names span {
+  color: #bd777c;
+
+  font-size: 22px;
+
+  margin: 0 4px;
+}
+
+.ticket-subtitle {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 9px;
+
+  letter-spacing: 2.3px;
+
+  color: #b38e90;
+}
+
+
+/* dividers */
+
 .ticket-divider {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 18px 0;
+
   border-top:
-    1px dashed
-    rgba(185,109,115,.35);
+    1px solid rgba(185,109,115,.20);
+}
+
+.ticket-divider.dashed {
+  border-top:
+    1px dashed rgba(185,109,115,.35);
+}
+
+
+/* ticket grid */
+
+.ticket-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 10px;
+}
+
+.ticket-info {
+  padding: 5px 10px;
+}
+
+.ticket-info:first-child {
+  border-right:
+    1px solid rgba(185,109,115,.18);
+}
+
+.ticket-label {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  font-weight: bold;
+
+  color: #b07b7e;
+
+  margin-bottom: 6px;
+}
+
+.ticket-value {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  color: #554344;
+}
+
+.ticket-small {
+  margin-top: 3px;
+
+  font-size: 10px;
+
+  color: #967d7e;
+}
+
+
+/* plan */
+
+.ticket-section {
+  position: relative;
+
+  z-index: 2;
 
   margin: 15px 0;
 }
 
-.ticket-details {
-  font-size: 13px;
+.ticket-plan,
+.ticket-destination {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  line-height: 2;
+  font-size: 17px;
 
-  color: #776465;
+  color: #5f4a4b;
 }
 
-.ticket-admit {
-  margin-top: 16px;
 
-  padding-top: 14px;
+/* reserved */
 
-  border-top:
-    1px solid
-    rgba(185,109,115,.17);
+.reserved-section {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 3px 0 12px;
+}
+
+.reserved-name {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  color: #a7656a;
+
+  letter-spacing: 1px;
+}
+
+
+/* dress code */
+
+.dress-code {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-block;
+
+  margin-top: 3px;
+
+  padding: 9px 14px;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255,255,255,.55);
+
+  color: #7e6869;
 
   font-size: 11px;
+}
+
+.dress-code span {
+  color: #ad777b;
+
+  font-size: 8px;
 
   font-weight: bold;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 1.2px;
 
-  color: #a1666b;
+  margin-right: 5px;
 }
 
 
-/* =========================
-   SCREENSHOT NOTE
-========================= */
+/* valid for */
+
+.valid-for {
+  position: relative;
+
+  z-index: 2;
+}
+
+.valid-text {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #766061;
+}
+
+
+/* ticket footer */
+
+.ticket-footer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid rgba(185,109,115,.15);
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  color: #b18c8e;
+}
+
+
+/* screenshot note */
 
 .screenshot-note {
   margin-top: 18px;
 
   font-family:
-    Arial, sans-serif;
+    Arial,
+    sans-serif;
 
   font-size: 12px;
+
+  line-height: 1.6;
 
   color: #a08082;
 
@@ -722,9 +1011,9 @@ button:active {
 }
 
 
-/* =========================
-   HEART CONFETTI
-========================= */
+/* =========================================
+   FLOATING HEARTS
+========================================= */
 
 .heart {
   position: fixed;
@@ -741,9 +1030,9 @@ button:active {
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-height: 720px) {
 
@@ -770,8 +1059,8 @@ button:active {
 @media (max-width: 400px) {
 
   .card {
-    padding-left: 19px;
-    padding-right: 19px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   button {
@@ -783,26 +1072,33 @@ button:active {
   }
 
   .no-hint {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .ticket {
+    padding:
+      25px 18px 18px;
+  }
+
+  .ticket-names {
+    font-size: 27px;
   }
 
 }
 
 
-/* =========================
+/* =========================================
    ANIMATIONS
-========================= */
+========================================= */
 
 @keyframes backgroundMove {
 
   from {
-    background-position:
-      0% 0%;
+    background-position: 0% 0%;
   }
 
   to {
-    background-position:
-      100% 100%;
+    background-position: 100% 100%;
   }
 
 }
@@ -831,7 +1127,8 @@ button:active {
 
 @keyframes envelopeFloat {
 
-  0%,100% {
+  0%,
+  100% {
     transform:
       translateY(0)
       rotate(-2deg);
@@ -872,7 +1169,8 @@ button:active {
 
 @keyframes heartbeat {
 
-  0%,100% {
+  0%,
+  100% {
     transform:
       scale(1);
   }
@@ -887,7 +1185,8 @@ button:active {
 
 @keyframes catFloat {
 
-  0%,100% {
+  0%,
+  100% {
     transform:
       translateY(0);
   }
@@ -923,7 +1222,8 @@ button:active {
 
 @keyframes glowFloatOne {
 
-  0%,100% {
+  0%,
+  100% {
     transform:
       translate(0,0);
   }
@@ -938,7 +1238,8 @@ button:active {
 
 @keyframes glowFloatTwo {
 
-  0%,100% {
+  0%,
+  100% {
     transform:
       translate(0,0);
   }
@@ -957,16 +1258,13 @@ button:active {
 <body>
 
 
-<!-- BACKGROUND -->
-
 <div class="bg-glow glow-one"></div>
 <div class="bg-glow glow-two"></div>
 
 
-
-<!-- =========================
+<!-- =====================================
      PAGE 1
-========================= -->
+===================================== -->
 
 <section
   class="page active"
@@ -982,7 +1280,25 @@ button:active {
 
 
     <div class="small">
-      A little invitation
+      Special delivery
+    </div>
+
+
+    <div class="address-label">
+
+      <div class="address-to">
+        TO
+      </div>
+
+      <div class="address-name">
+        The prettiest girl
+        in the world 🤍
+      </div>
+
+      <div class="address-from">
+        from: Jes
+      </div>
+
     </div>
 
 
@@ -1021,9 +1337,9 @@ button:active {
 
 
 
-<!-- =========================
+<!-- =====================================
      PAGE 2
-========================= -->
+===================================== -->
 
 <section
   class="page"
@@ -1092,9 +1408,9 @@ button:active {
 
 
 
-<!-- =========================
+<!-- =====================================
      PAGE 3
-========================= -->
+===================================== -->
 
 <section
   class="page"
@@ -1152,9 +1468,9 @@ button:active {
 
 
 
-<!-- =========================
-     PAGE 4
-========================= -->
+<!-- =====================================
+     PAGE 4 — INVITATION
+===================================== -->
 
 <section
   class="page"
@@ -1186,8 +1502,6 @@ button:active {
     </h1>
 
 
-
-    <!-- DATE -->
 
     <div class="date-box">
 
@@ -1282,7 +1596,6 @@ button:active {
     </div>
 
 
-
     <p class="soft-text">
 
       All you have to do is
@@ -1292,8 +1605,6 @@ button:active {
     </p>
 
 
-
-    <!-- YES / NO -->
 
     <div class="answer-area">
 
@@ -1340,7 +1651,6 @@ button:active {
     </div>
 
 
-
     <div class="progress">
 
       <div class="dot"></div>
@@ -1357,9 +1667,9 @@ button:active {
 
 
 
-<!-- =========================
+<!-- =====================================
      PAGE 5 — YES
-========================= -->
+===================================== -->
 
 <section
   class="page"
@@ -1393,18 +1703,36 @@ button:active {
 
 
 
-    <!-- TICKET -->
+    <!-- PREMIUM DATE TICKET -->
 
     <div class="ticket">
 
 
+      <div class="ticket-watermark">
+        J + J
+      </div>
+
+
       <div class="ticket-top">
-        ♡ DATE TICKET ♡
+        ♡ OUR LITTLE DATE ♡
       </div>
 
 
       <div class="ticket-names">
-        JOY + JES
+
+        JOY
+
+        <span>
+          +
+        </span>
+
+        JES
+
+      </div>
+
+
+      <div class="ticket-subtitle">
+        A LITTLE DATE PASS
       </div>
 
 
@@ -1412,23 +1740,157 @@ button:active {
       </div>
 
 
-      <div class="ticket-details">
 
-        📅 MONDAY • OCTOBER 5, 2026
+      <!-- DATE + TIME -->
 
-        <br>
+      <div class="ticket-grid">
 
-        🕔 5:00 PM
 
-        <br>
+        <div class="ticket-info">
 
-        🍽️ DINNER FOR TWO
+          <div class="ticket-label">
+            DATE
+          </div>
+
+          <div class="ticket-value">
+            OCT 05
+          </div>
+
+          <div class="ticket-small">
+            Monday • 2026
+          </div>
+
+        </div>
+
+
+
+        <div class="ticket-info">
+
+          <div class="ticket-label">
+            TIME
+          </div>
+
+          <div class="ticket-value">
+            5:00
+          </div>
+
+          <div class="ticket-small">
+            PM
+          </div>
+
+        </div>
+
 
       </div>
 
 
-      <div class="ticket-admit">
-        ADMIT ONE WUV 🤍
+      <div class="ticket-divider dashed">
+      </div>
+
+
+
+      <!-- PLAN -->
+
+      <div class="ticket-section">
+
+        <div class="ticket-label">
+          PLAN
+        </div>
+
+        <div class="ticket-plan">
+          🍽️ Dinner Date
+        </div>
+
+      </div>
+
+
+
+      <div class="ticket-section">
+
+        <div class="ticket-label">
+          DESTINATION
+        </div>
+
+        <div class="ticket-destination">
+          📍 A surprise
+        </div>
+
+      </div>
+
+
+      <div class="ticket-divider dashed">
+      </div>
+
+
+
+      <!-- RESERVED FOR -->
+
+      <div class="reserved-section">
+
+        <div class="ticket-label">
+          RESERVED FOR
+        </div>
+
+        <div class="reserved-name">
+          JOY 🤍
+        </div>
+
+      </div>
+
+
+
+      <div class="dress-code">
+
+        <span>
+          DRESS CODE
+        </span>
+
+        Come as yourself :)
+
+      </div>
+
+
+      <div class="ticket-divider dashed">
+      </div>
+
+
+
+      <!-- VALID FOR -->
+
+      <div class="valid-for">
+
+        <div class="ticket-label">
+          VALID FOR
+        </div>
+
+        <div class="valid-text">
+
+          Good food • Random conversations
+
+          <br>
+
+          Laughs • A little adventure
+
+          <br>
+
+          & another memory together 🤍
+
+        </div>
+
+      </div>
+
+
+
+      <div class="ticket-footer">
+
+        <span>
+          J + J
+        </span>
+
+        <span>
+          NO. 100526
+        </span>
+
       </div>
 
 
@@ -1454,8 +1916,8 @@ button:active {
 
     <div class="screenshot-note">
 
-      Screenshot this —
-      your official date ticket 🎟️🤍
+      Keep this, wuv.
+      Your date pass for October 5. 🎟️🤍
 
     </div>
 
@@ -1466,9 +1928,9 @@ button:active {
 
 
 
-<!-- =========================
+<!-- =====================================
      PAGE 6 — NO
-========================= -->
+===================================== -->
 
 <section
   class="page"
@@ -1508,9 +1970,9 @@ button:active {
 <script>
 
 
-/* =========================
+/* =========================================
    PAGE NAVIGATION
-========================= */
+========================================= */
 
 function showPage(number) {
 
@@ -1536,8 +1998,6 @@ function showPage(number) {
     "active"
   );
 
-
-  /* restart card animation */
 
   const card =
     newPage.querySelector(
@@ -1565,9 +2025,9 @@ function showPage(number) {
 
 
 
-/* =========================
-   NO BUTTON
-========================= */
+/* =========================================
+   PLAYFUL NO
+========================================= */
 
 let noAttempts = 0;
 
@@ -1639,8 +2099,8 @@ function handleNo() {
 
 
   /*
-    After the five jokes,
-    clicking No is real.
+    After the jokes,
+    No becomes a genuine choice.
   */
 
   if (noAttempts >= 5) {
@@ -1656,12 +2116,13 @@ function handleNo() {
 
 
 
-  /* HIDE HINT */
+  /* hide hint */
 
   if (hint) {
 
     hint.style.opacity =
       "0";
+
 
     setTimeout(() => {
 
@@ -1674,7 +2135,7 @@ function handleNo() {
 
 
 
-  /* CHANGE NO MESSAGE */
+  /* change message */
 
   noButton.textContent =
 
@@ -1684,7 +2145,7 @@ function handleNo() {
 
 
 
-  /* SHRINK NO */
+  /* shrink No */
 
   noButton.style.fontSize =
 
@@ -1701,7 +2162,7 @@ function handleNo() {
 
 
 
-  /* GROW YES 😂 */
+  /* grow YES */
 
   const yesScale =
 
@@ -1716,8 +2177,8 @@ function handleNo() {
 
 
   /*
-    After the last joke,
-    give her the genuine No.
+    final joke before
+    giving her a real No
   */
 
   if (noAttempts === 5) {
@@ -1747,9 +2208,9 @@ function handleNo() {
 
 
 
-/* =========================
+/* =========================================
    YES
-========================= */
+========================================= */
 
 function yes() {
 
@@ -1759,8 +2220,6 @@ function yes() {
       "yesBtn"
     );
 
-
-  /* tiny joke first */
 
   yesButton.textContent =
     "I knew it 😌🤍";
@@ -1775,8 +2234,6 @@ function yes() {
 
     showPage(5);
 
-
-    /* heart celebration */
 
     for (
       let i = 0;
@@ -1800,9 +2257,9 @@ function yes() {
 
 
 
-/* =========================
-   HEARTS
-========================= */
+/* =========================================
+   FLOATING HEARTS
+========================================= */
 
 function createHeart() {
 
